@@ -2,36 +2,33 @@ services:
   # 1. Umbrel 反向代理服务
   app_proxy:
     environment:
-      # APP_HOST: 必须设置为下面 metube 应用服务的名称, 我们将其命名为 "server"
-      APP_HOST: server
+      # APP_HOST: 参照 memos 格式，必须精确匹配下方 main 服务的 container_name
+      # 我们假设 app-id 是 'metube'
+      APP_HOST: metube_main_1
 
-      # APP_PORT: 必须设置为 "server" 容器内部监听的端口
-      # 从 metube 官方配置 "ports: ...:8081" 得知, 内部端口是 8081
+      # APP_PORT: 必须是 metube 容器的 *内部* 端口
       APP_PORT: 8081
 
-  # 2. MeTube 应用服务 (我们将其命名为 "server")
-  server:
-    # 使用 metube 官方镜像
-    image: ghcr.io/alexta69/metube
+  # 2. MeTube 应用服务
+  main:
+    # 使用官方 metube 镜像
+    image: ghcr.io/alexta69/metube:latest
     
-    # 使用官方的重启策略
+    # 参照 memos，使用 'main' 作为服务名，并设置 'container_name'
+    # 这个名字必须与上面的 APP_HOST 一致
+    container_name: metube_main_1
+    
+    # 参照 memos，使用标准 1000:1000 用户
+    user: '1000:1000'
+    
+    # 使用 metube 官方的重启策略
     restart: unless-stopped
     
-    # 添加 Umbrel 的标准安全/稳定性配置 (使用非 root 用户并启用 init)
-    user: "1000:1000"
-    init: true
-    
-    # 移除 "ports" 映射, 因为 app_proxy 会处理所有外部访问
-    # ports:
-    #   - "8081:8081"
-      
-    # 替换为 "expose" 来声明容器的内部端口 8081
-    # 这允许 app_proxy 在 Docker 网络内部访问它
+    # 参照 memos，移除 'ports'，替换为 'expose'
     expose:
-      - "8081"
+      - "8081" # 声明内部端口
       
-    # 配置数据卷，这是 metube 保存下载内容所必需的
-    # 我们将容器内的 /downloads 目录映射到 Umbrel 的标准数据路径
-    # 注意：请确保你有 /data/downloads 这个目录，或者使用你希望的 Umbrel 宿主机路径
     volumes:
-      - /data/downloads:/downloads
+      # 参照 memos，使用 ${APP_DATA_DIR} 自动管理数据和权限
+      # 将 metube 内部的 /downloads 路径映射到 Umbrel 的标准数据目录
+      - ${APP_DATA_DIR}/data:/downloads
