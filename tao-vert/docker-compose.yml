@@ -7,7 +7,7 @@ services:
     
     environment:
       # Umbrel 会自动提供 $APP_DOMAIN 变量
-      PUB_HOSTNAME: "192.168.31.16:6688"
+      PUB_HOSTNAME: "${APP_DOMAIN}"
       
       # 其他从你原始配置中转换过来的环境变量
       PUB_PLAUSIBLE_URL: "${PUB_PLAUSIBLE_URL:-}"
