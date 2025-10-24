@@ -16,7 +16,7 @@ services:
     # 关键：container_name 必须与 APP_HOST 完全一致
     container_name: tao-metube_main_1
     
-    user: '1000:1000'
+    # user: '1000:1000'
     restart: unless-stopped
     
     expose:
