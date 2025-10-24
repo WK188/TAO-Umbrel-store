@@ -1,6 +1,6 @@
 manifestVersion: 1
 # 关键：这个ID必须和文件夹名称 "vert" 匹配
-id: "tao"
+id: "tao-vert"
 name: "Vert"
 submitter: "Tao" # 你可以写你自己的名字
 version: "1.0.0"
