@@ -13,7 +13,7 @@ description: >-
 icon: "https://img.heliar.top/file/1761319296895_Frame_1.png"
 
 # 关键修改
-port: 7120
+port: 8082
 path: ""
 
 dependencies: []
