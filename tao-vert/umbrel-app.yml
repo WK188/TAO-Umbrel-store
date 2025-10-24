@@ -13,10 +13,11 @@ description: >-
 icon: "https://img.heliar.top/file/1761319296895_Frame_1.png"
 
 # 关键修改
-port: 8080       # 改为独立端口
-path: ""         # 空路径，避免 Umbrel 首页冲突
+port: 8080
+path: ""
 
 dependencies: []
+path: ""
 defaultUsername: ""
 defaultPassword: ""
 
