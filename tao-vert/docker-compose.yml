@@ -1,0 +1,24 @@
+services:
+  # 1. 服务名称必须是 "app"
+  app:
+    # 2. 我们使用预构建的镜像
+    image: ghcr.io/vert-sh/vert:latest
+    container_name: vert
+    restart: unless-stopped
+    
+    # 3. "build:" 和 "args:" 被转换为 "environment:"
+    environment:
+      # 4. 我们使用 Umbrel 提供的 $APP_DOMAIN 变量
+      PUB_HOSTNAME: "${APP_DOMAIN}"
+      
+      # 5. 我们将其他变量设置为环境变量
+      # 注意：我们假设镜像会读取这些环境变量
+      PUB_PLAUSIBLE_URL: "${PUB_PLAUSIBLE_URL:-}"
+      PUB_ENV: "production" # 在 Umbrel 上，它总是生产环境
+      PUB_DISABLE_ALL_EXTERNAL_REQUESTS: "${DISABLE_ALL_EXTERNAL_REQUESTS:-false}"
+      PUB_VERTD_URL: "${PUB_VERTD_URL:-}"
+      PUB_DONATION_URL: "${PUB_DONATION_URL:-https://donations.vert.sh}"
+      PUB_STRIPE_KEY: "${PUB_STRIPE_KEY:-pk_live_51RDVmAGSxPVad6bQwzVNnbc28nlmzA30krLWk1fefCMpUPiSRPkavMMbGqa8A3lUaOCMlsUEVy2CWDYg0ip3aPpL00ZJlsMkf2}"
+      
+    # 6. "ports:" 部分被完全删除。
+    # Umbrel 将根据 umbrel-app.yml 中的 "port" 字段处理此问题。
