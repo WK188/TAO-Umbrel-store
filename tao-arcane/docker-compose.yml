@@ -1,0 +1,39 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-arcane)
+      APP_HOST: tao-arcane_main_1
+      # 关键: 端口链 (匹配 Arcane 内部端口)
+      APP_PORT: 3552
+
+  # 2. Arcane 应用服务
+  main:
+    image: ghcr.io/ofkm/arcane:latest
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-arcane_main_1
+    
+    restart: unless-stopped
+
+    # 关键: 路径链
+    volumes:
+      # 特殊依赖：允许 Arcane 控制 Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      # 路径链：使用 Umbrel 标准路径, 自动处理权限
+      - ${APP_DATA_DIR}/data:/app/data
+      
+    # 关键: 权限链 (不使用 user: 1000，而是使用 PUID/PGID)
+    environment:
+      - APP_URL=http://localhost:3552
+      - PUID=1000
+      - PGID=1000
+      # ⬇️ 警告：你必须替换下面这两个为你自己的密钥！
+      - ENCRYPTION_KEY=951f7e829038fcb488bd4e807f46db55c096096a518bbeccb5505944e679a6b5
+      - JWT_SECRET=QQU/6LyaM0ieBx2ufuKsRKL9hCkKlquTSqpoeUbHfFJduakzCZkCKiKiSHqY2kkQ
+
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "3552"
+
+# 移除顶层的 "volumes: arcane-data:"，因为已被 ${APP_DATA_DIR} 替代
