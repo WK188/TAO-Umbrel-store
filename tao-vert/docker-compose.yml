@@ -1,19 +1,25 @@
 services:
-  # 定义第一个服务：app_proxy（Umbrel 的反向代理容器，用来连接应用和外部访问）
+  # 定义第一个服务：app_proxy
   app_proxy:
     environment:
-      # 环境变量说明：
-      # APP_HOST 定义应用主机名，用于 Umbrel 代理内部识别容器地址
-      # 格式通常为：<app-id>_<docker-service-name>_1
-      APP_HOST: tao-vert_1
-      # APP_PORT 定义应用内部监听的端口号，Umbrel 会将该端口映射出去供访问
-      APP_PORT: 3100
+      # ... (其他环境变异) ...
 
-  # 定义第二个服务：server（即你的实际应用容器）
+      # 定义应用主机名 (使用服务名)
+      APP_HOST: server  # <-- 修改 1：确保这里是 server
+
+      # 定义应用内部监听的端口号
+      APP_PORT: 80      # <-- 修改 2：从 3100 更改为 80
+
+  # 定义第二个服务：server (你的实际应用)
   server:
-    # 指定容器使用的镜像，这里是 Umbrel 官方示例镜像
+    # 指定容器使用的镜像
     image: ghcr.io/vert-sh/vert:latest
-    # 指定容器运行的用户和用户组 ID（1000:1000 通常是非 root 用户，增强安全性）
-    user: "1000:1000"
-    # 启用 init 进程，用于正确处理僵尸进程和信号（提高容器稳定性）
-    init: true
+    # ... (user, init 等其他配置) ...
+
+    # 移除 'ports' 映射，因为 app_proxy 会处理外部访问
+    # ports:
+    #   - ${PORT:-3000}:80  <-- 删除或注释掉这一行
+
+    # 使用 'expose' 声明容器的内部端口
+    expose:
+      - "80"             # <-- 修改 3：添加这一行 (或从 3100 改为 80)
