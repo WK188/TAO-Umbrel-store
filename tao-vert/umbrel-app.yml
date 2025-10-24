@@ -20,7 +20,7 @@ port: 80
 # ---
 
 dependencies: []
-path: ""
+path: "/vert"
 defaultUsername: ""
 defaultPassword: ""
 
