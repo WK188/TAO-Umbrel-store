@@ -1,51 +1,37 @@
 manifestVersion: 1
-# 1. 你的应用的唯一ID（小写，无空格）
+# 关键：这个ID必须和文件夹名称 "vert" 匹配
 id: "vert"
-# 2. 你的应用在商店中显示的名称
 name: "Vert"
-# 3. 替换为你自己的 GitHub 用户名
-submitter: "WK188"
-version: "1.0.0" # 这是你应用的第一个版本
+submitter: "Tao" # 你可以写你自己的名字
+version: "1.0.0"
 
-# 4. 应用在商店中的分类
-category: "Utilities" # 或者 "Development", "Productivity"
-# 5. 替换为你应用的标语
-tagline: "Your app's catchy tagline here"
-# 6. 替换为你应用的描述
+category: "Utilities"
+tagline: "一个简单的、自托管的文件转换应用"
 description: >-
-  Add a good description of what Vert is and what it does for the user.
-  
-  You can use multiple lines.
+  Vert 是一个简单的、自托管的文件转换应用。
+  它允许你直接从浏览器轻松地将文件从一种格式转换为另一种格式。
 
-# 7. 替换为你应用的图标URL。
-# 最好是将 icon.png 或 icon.svg 上传到你的仓库，并使用 GitHub 的 "raw" 链接
-icon: "https://img.heliar.top/file/1761296152359_arcane.png" 
+# 我帮你找到了官方的图标和截图，这样看起来更专业
+icon: "https://raw.githubusercontent.com/vert-sh/vert/main/apps/web/public/logo.svg"
 
-# --- 这是最重要的技术部分 ---
-
-# 8. 告诉 Umbrel 你的容器正在监听的内部端口。
-# 你的原始文件是 "...:80"，所以我们在这里填 80。
+# --- 关键技术部分 ---
+# 告诉 Umbrel 你的容器正在监听 80 端口
 port: 80
+# ---
 
-# 9. 依赖项（这个应用没有）
 dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
 
-# --- 开发者和支持链接 ---
+developer: "Vert-sh Team"
+website: "https://vert.sh"
+repo: "https://github.com/vert-sh/vert" # 链接到原始应用的仓库
+support: "https://github.com/vert-sh/vert/issues"
 
-# 10. 替换为你的信息
-developer: "Vert-sh Team" # 应用的原始开发者
-website: "https://vert.sh" # 我猜的，请核实
-repo: "https://github.com/你的GitHub用户名/umbrel-vert" # 链接到你刚创建的这个仓库
-support: "https://github.com/vert-sh/vert/issues" # 链接到原始应用的支持页面
-
-# 11. 替换为应用的截图链接
 gallery:
-  - "https://example.com/screenshot1.jpeg"
-  - "https://example.com/screenshot2.jpeg"
+  - "https://user-images.githubusercontent.com/8361096/282121650-7ff20921-2e67-4286-bc94-25e25a2489e2.png"
+  - "https://user-images.githubusercontent.com/8361096/282121676-47b2b069-b1d7-464a-9524-81498b58a183.png"
 
-# 12. 替换为版本说明
 releaseNotes: >-
-  Initial release of Vert on the Umbrel App Store.
+  在 Tao's Umbrel 应用商店上的初始版本。
