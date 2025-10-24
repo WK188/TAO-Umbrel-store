@@ -1,8 +1,7 @@
 manifestVersion: 1
-# 关键：这个ID必须和文件夹名称 "vert" 匹配
 id: "tao-vert"
 name: "Vert"
-submitter: "Tao" # 你可以写你自己的名字
+submitter: "Tao"
 version: "1.0.0"
 
 category: "Utilities"
@@ -11,23 +10,19 @@ description: >-
   Vert 是一个简单的、自托管的文件转换应用。
   它允许你直接从浏览器轻松地将文件从一种格式转换为另一种格式。
 
-# 我帮你找到了官方的图标和截图，这样看起来更专业
 icon: "https://img.heliar.top/file/1761319296895_Frame_1.png"
 
-# --- 关键技术部分 ---
-# 告诉 Umbrel 你的容器正在监听 80 端口
-port: 80
-path: "/vert"
-# ---
+# 关键修改
+port: 8080       # 改为独立端口
+path: ""         # 空路径，避免 Umbrel 首页冲突
 
 dependencies: []
-path: ""
 defaultUsername: ""
 defaultPassword: ""
 
 developer: "Vert-sh Team"
 website: "https://vert.sh"
-repo: "https://github.com/vert-sh/vert" # 链接到原始应用的仓库
+repo: "https://github.com/vert-sh/vert"
 support: "https://github.com/vert-sh/vert/issues"
 
 gallery:
