@@ -1,0 +1,70 @@
+# 清单版本号，用于定义该配置文件的格式版本（目前Umbrel使用1）
+manifestVersion: 1
+
+# 应用的唯一标识符（必须唯一），通常用“开发者名-应用名”的形式
+id: tao-metube
+
+# 应用显示名称，会显示在Umbrel应用商店中
+name: Metube
+
+# 应用的简短描述或标语，通常一句话概括用途
+tagline: download youtube
+
+# 应用图标的URL地址，用于在应用商店显示
+icon: https://img.heliar.top/file/1761324582024_Frame_1.png
+
+# 应用分类，例如Development（开发）、Media（媒体）、Productivity（效率）等
+category: Development
+
+# 当前应用版本号，遵循语义化版本格式（major.minor.patch）
+version: "1.0.0"
+
+# 应用运行时映射到宿主机的端口号，用于访问Web界面等
+port: 8081
+
+# 应用的详细描述，支持多行文本
+description: >-
+  Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.
+
+# 应用开发者或维护者名称
+developer: TAO
+
+# 开发者官网或应用主页地址
+website: https://vert.sh/
+
+# 提交该应用到Umbrel商店的用户或组织名称
+submitter: Umbrel
+
+# 应用提交时对应的GitHub仓库地址
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+
+# 应用源代码仓库地址
+repo: https://github.com/getumbrel/umbrel-hello-world-app
+
+# 应用的支持或反馈页面地址（通常是issues页面）
+support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+
+# 应用截图展示列表（通常为3~5张图片）
+gallery:
+  # 第一张截图
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  # 第二张截图
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  # 第三张截图
+  - https://i.imgur.com/yyVG0Jb.jpeg
+
+# 版本更新说明，写明新功能或修复的内容
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
+
+# 应用运行依赖的其他Umbrel应用（为空表示无依赖）
+dependencies: []
+
+# 应用的访问路径（一般留空，默认使用根路径）
+path: ""
+
+# 应用初始默认用户名（若有登录系统）
+defaultUsername: ""
+
+# 应用初始默认密码（若有登录系统）
+defaultPassword: ""
