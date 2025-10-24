@@ -17,10 +17,11 @@ icon: "https://img.heliar.top/file/1761319296895_Frame_1.png"
 # --- 关键技术部分 ---
 # 告诉 Umbrel 你的容器正在监听 80 端口
 port: 80
+path: "/vert"
 # ---
 
 dependencies: []
-path: "/vert"
+path: ""
 defaultUsername: ""
 defaultPassword: ""
 
