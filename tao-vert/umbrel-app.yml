@@ -16,7 +16,7 @@ icon: "https://img.heliar.top/file/1761300072212_umbrel.png"
 
 # --- 关键技术部分 ---
 # 告诉 Umbrel 你的容器正在监听 80 端口
-port: 3100
+port: 80
 # ---
 
 dependencies: []
