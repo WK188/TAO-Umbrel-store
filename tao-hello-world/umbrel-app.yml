@@ -2,7 +2,7 @@ manifestVersion: 1
 id: tao-hello-world
 name: Hello World
 tagline: Replace this tagline with your app's tagline
-icon: https://img.heliar.top/file/1761319296895_Frame_1.png
+icon: https://img.heliar.top/file/1761323767560_Frame_2.png
 category: Development
 version: "1.0.0"
 port: 4000
