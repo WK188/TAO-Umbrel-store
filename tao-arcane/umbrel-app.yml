@@ -1,1 +1,67 @@
+# 清单版本号
+manifestVersion: 1
 
+# 关键：应用唯一 ID
+id: tao-arcane
+
+# 应用显示名称
+name: Arcane
+
+# 标语
+tagline: Modern Docker Management
+
+# 图标
+icon: https://img.heliar.top/file/1761348779795_Arcane.png
+
+# 分类
+category: Development
+
+# 版本号
+version: "1.0.0"
+
+# 关键：端口号 (必须是 metube 内部运行的 8081)
+port: 3552
+
+# 详细描述
+description: >-
+  Modern Docker Management, Designed for Everyone.
+
+# 开发者
+developer: TAO
+
+# 网站 (修正：指向 metube 仓库)
+website: https://github.com/alexta69/metube
+
+# 提交者
+submitter: TAO
+
+# 提交 (修正：指向 metube 仓库)
+submission: https://github.com/alexta69/metube
+
+# 源码仓库 (修正：指向 metube 仓库)
+repo: https://github.com/alexta69/metube
+
+# 支持页面 (修正：指向 metube 仓库的 issues)
+support: https://github.com/alexta69/metube/issues
+
+# 截图
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+
+# 版本说明
+releaseNotes: >-
+  First release on this Umbrel.
+
+# 依赖
+dependencies: []
+
+# 路径
+path: ""
+
+# 默认用户名
+defaultUsername: ""
+
+# 默认密码
+defaultPassword: ""
