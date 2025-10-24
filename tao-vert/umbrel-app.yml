@@ -1,28 +1,23 @@
 manifestVersion: 1
 id: tao-vert
 name: Vert
-tagline: 一个简单的、自托管的文件转换应用
-icon: https://img.heliar.top/file/1761319296895_Frame_1.png
-category: Utilities
-version: "1.0.0"
-port: 80
+tagline: 一个简单的、自托管文件转换应用
 description: >-
-  Vert 是一个简单的、自托管的文件转换应用。
-  它允许你直接从浏览器轻松地将文件从一种格式转换为另一种格式。
-  通过 Umbrel 应用商店安装后，你可以直接点击图标访问。
-
+  Vert 允许你直接从浏览器轻松地将文件从一种格式转换为另一种格式。
+icon: "https://img.heliar.top/file/1761319296895_Frame_1.png"
+category: Utilities
 developer: Vert-sh Team
-website: https://vert.sh
-submitter: Tao
-submission: ""  # 可选，填写 GitHub 提交链接
-repo: https://github.com/vert-sh/vert
-support: https://github.com/vert-sh/vert/issues
-gallery:
-  - https://user-images.githubusercontent.com/8361096/282121650-7ff20921-2e67-4286-bc94-25e25a2489e2.png
-  - https://user-images.githubusercontent.com/8361096/282121676-47b2b069-b1d7-464a-9524-81498b58a183.png
-releaseNotes: >-
-  在 Tao 的 Umbrel 应用商店上的初始版本。
-dependencies: []
-path: ""              # 空路径，直接通过端口访问
-defaultUsername: ""   # 如果应用需要默认登录，可填
+website: "https://vert.sh"
+repo: "https://github.com/vert-sh/vert"
+support: "https://github.com/vert-sh/vert/issues"
+port: 80                # 容器内部服务端口
+path: ""                # 保持空，让 Umbrel 直接访问根路径
+defaultUsername: ""
 defaultPassword: ""
+permissions:
+  - STORAGE_DOWNLOADS     # 如果需要访问 /data
+submitter: Tao
+submission: ""          # 可以留空或写 GitHub 链接
+gallery:
+  - "https://user-images.githubusercontent.com/8361096/282121650-7ff20921-2e67-4286-bc94-25e25a2489e2.png"
+releaseNotes: "初始版本"
