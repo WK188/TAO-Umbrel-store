@@ -1,34 +1,27 @@
 services:
-  # 1. Umbrel 反向代理服务
+  # 1. Umbrel 反向代理
   app_proxy:
     environment:
-      # APP_HOST: 参照 memos 格式，必须精确匹配下方 main 服务的 container_name
-      # 我们假设 app-id 是 'metube'
-      APP_HOST: metube_main_1
+      # 关键：APP_HOST 必须是 <id>_main_1
+      # 你的 id 是 "tao-metube"，所以这里必须是 "tao-metube_main_1"
+      APP_HOST: tao-metube_main_1
 
-      # APP_PORT: 必须是 metube 容器的 *内部* 端口
+      # 关键：APP_PORT 必须是 metube 的内部端口 8081
       APP_PORT: 8081
 
   # 2. MeTube 应用服务
   main:
-    # 使用官方 metube 镜像
     image: ghcr.io/alexta69/metube:latest
     
-    # 参照 memos，使用 'main' 作为服务名，并设置 'container_name'
-    # 这个名字必须与上面的 APP_HOST 一致
-    container_name: metube_main_1
+    # 关键：container_name 必须与 APP_HOST 完全一致
+    container_name: tao-metube_main_1
     
-    # 参照 memos，使用标准 1000:1000 用户
     user: '1000:1000'
-    
-    # 使用 metube 官方的重启策略
     restart: unless-stopped
     
-    # 参照 memos，移除 'ports'，替换为 'expose'
     expose:
-      - "8081" # 声明内部端口
+      - "8081"
       
     volumes:
-      # 参照 memos，使用 ${APP_DATA_DIR} 自动管理数据和权限
-      # 将 metube 内部的 /downloads 路径映射到 Umbrel 的标准数据目录
+      # 使用 Umbrel 标准数据路径，自动处理权限
       - ${APP_DATA_DIR}/data:/downloads
