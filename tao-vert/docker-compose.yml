@@ -1,10 +1,13 @@
+version: '3.7'
 services:
   # 1. Umbrel 反向代理
   app_proxy:
     environment:
       # 关键: 主机链 (匹配你的 id: tao-vert)
       APP_HOST: tao-vert_main_1
-      # 关键: 端口链 (匹配 Vert 内部端口)
+      
+      # 关键: 端口链 (修正)
+      # 代理的目标端口 *必须* 是 Vert 的内部端口 80
       APP_PORT: 80
 
   # 2. Vert 应用服务
@@ -16,13 +19,7 @@ services:
     
     restart: unless-stopped
 
-    # 关键: 权限链
-    # 官方配置没有 user，我们遵循经验，省略 user 字段
-    # 官方配置没有 volumes，我们省略 volumes 字段
-    
     # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    # 声明容器的内部端口
     expose:
       - "80"
-
-    # 官方配置中的 'build' 和 'args' 部分
-    # 是用于从源码构建的，我们使用预构建镜像，所以不需要它们
