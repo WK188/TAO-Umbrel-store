@@ -20,7 +20,7 @@ category: Development
 version: "1.0.0"
 
 # 应用运行时映射到宿主机的端口号，用于访问Web界面等
-port: 3100
+port: 80
 
 # 应用的详细描述，支持多行文本
 description: >-
