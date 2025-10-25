@@ -1,25 +1,28 @@
 services:
-  # 定义第一个服务：app_proxy
+  # 1. Umbrel 反向代理
   app_proxy:
     environment:
-      # ... (其他环境变异) ...
+      # 关键: 主机链 (匹配你的 id: tao-vert)
+      APP_HOST: tao-vert_main_1
+      # 关键: 端口链 (匹配 Vert 内部端口)
+      APP_PORT: 80
 
-      # 定义应用主机名 (使用服务名)
-      APP_HOST: server  # <-- 修改 1：确保这里是 server
+  # 2. Vert 应用服务
+  main:
+    image: 'ghcr.io/vert-sh/vert:latest'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-vert_main_1
+    
+    restart: unless-stopped
 
-      # 定义应用内部监听的端口号
-      APP_PORT: 80      # <-- 修改 2：从 3100 更改为 80
-
-  # 定义第二个服务：server (你的实际应用)
-  server:
-    # 指定容器使用的镜像
-    image: ghcr.io/vert-sh/vert:latest
-    # ... (user, init 等其他配置) ...
-
-    # 移除 'ports' 映射，因为 app_proxy 会处理外部访问
-    # ports:
-    #   - ${PORT:-3000}:80  <-- 删除或注释掉这一行
-
-    # 使用 'expose' 声明容器的内部端口
+    # 关键: 权限链
+    # 官方配置没有 user，我们遵循经验，省略 user 字段
+    # 官方配置没有 volumes，我们省略 volumes 字段
+    
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
-      - "80"             # <-- 修改 3：添加这一行 (或从 3100 改为 80)
+      - "80"
+
+    # 官方配置中的 'build' 和 'args' 部分
+    # 是用于从源码构建的，我们使用预构建镜像，所以不需要它们
