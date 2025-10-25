@@ -11,7 +11,7 @@ name: Vert
 tagline: The file converter you'll love.
 
 # 应用图标的URL地址，用于在应用商店显示
-icon: https://img.heliar.top/file/1761324582024_Frame_1.png
+icon: https://img.heliar.top/file/1761353714429_Vert.png
 
 # 应用分类，例如Development（开发）、Media（媒体）、Productivity（效率）等
 category: Development
@@ -20,7 +20,7 @@ category: Development
 version: "1.0.0"
 
 # 应用运行时映射到宿主机的端口号，用于访问Web界面等
-port: 80
+port: 3100
 
 # 应用的详细描述，支持多行文本
 description: >-
