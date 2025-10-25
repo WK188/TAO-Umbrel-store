@@ -1,0 +1,32 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-qinglong)
+      APP_HOST: tao-qinglong_main_1
+      # 关键: 端口链 (匹配 Qinglong 内部端口)
+      APP_PORT: 5700
+
+  # 2. Qinglong 应用服务
+  main:
+    image: 'whyour/qinglong:latest'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-qinglong_main_1
+    
+    restart: unless-stopped
+
+    # 关键: 路径链 (使用 Umbrel 标准路径)
+    volumes:
+      - ${APP_DATA_DIR}/data:/ql/data
+      
+    # 关键: 权限链 (Case 2)
+    # 省略 'user:' 字段，让容器以默认 root 身份运行
+    
+    # 保留官方的环境变量
+    environment:
+      - QlBaseUrl=/
+      
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "5700"
