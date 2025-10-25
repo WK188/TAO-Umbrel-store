@@ -1,3 +1,4 @@
+version: '3.7'
 services:
   # 1. Umbrel 反向代理
   app_proxy:
@@ -17,16 +18,12 @@ services:
     expose:
       - "45876"
 
-    # 关键: 修正所有环境变量的 YAML 语法
+    # 关键: 修正所有环境变量，移除所有引号
     environment:
-      # 语法: - KEY=VALUE (没有空格)
       - LISTEN=45876
       
-      # 语法: - KEY="VALUE WITH SPACES" (使用双引号包裹值)
-      - KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEuQFLg1PH63cmv2IMIaA2mmGlojm8s+IkB/p/E4jRPO"
+      # 修正: 移除所有引号，YAML 会自动处理带空格的字符串
+      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEuQFLg1PH63cmv2IMIaA2mmGlojm8s+IkB/p/E4jRPO
       
-      # 语法: - KEY=VALUE (没有空格)
       - TOKEN=15c7-f9b3fc8fce-4199-621388ce8c
-      
-      # 语法: - KEY=VALUE (没有空格)
       - HUB_URL=http://192.168.31.16:8090
