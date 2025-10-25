@@ -19,7 +19,8 @@ services:
     # 关键: 路径链 (使用 Umbrel 标准路径)
     volumes:
       - ${APP_DATA_DIR}/data:/ql/data
-      
+      - /data/学习资料/downloads:/ql/downloads   # <-- 新增挂载
+
     # 关键: 权限链 (Case 2)
     # 省略 'user:' 字段，让容器以默认 root 身份运行
     
