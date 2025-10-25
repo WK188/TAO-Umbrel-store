@@ -2,28 +2,22 @@ services:
   # 1. Umbrel 反向代理
   app_proxy:
     environment:
-      # 关键: 主机链 (匹配你的 id: tao-openlist)
       APP_HOST: tao-openlist_main_1
-      # 关键: 端口链 (匹配 OpenList 内部端口)
       APP_PORT: 5244
 
   # 2. OpenList 应用服务
   main:
     image: 'openlistteam/openlist:latest'
-    
-    # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-openlist_main_1
     
+    # 关键：添加这一行！
+    # 这将强制容器以 root (0:0) 身份运行，
+    # 从而获得对 root 拥有的数据卷的写入权限。
+    user: '0:0'
+    
     restart: unless-stopped
-
-    # 关键: 路径链 (使用 Umbrel 标准路径)
     volumes:
       - ${APP_DATA_DIR}/data:/opt/openlist/data
       
-    # 关键: 权限链
-    # 官方配置为 user: '0:0' (root)，我们遵循最终经验：
-    # 完全省略 'user:' 字段，让容器以默认的 root 身份运行。
-    
-    # 保留官方的环境变量
     environment:
       - UMASK=022
