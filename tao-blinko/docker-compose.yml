@@ -10,7 +10,7 @@ services:
   # 2. Blinko 应用服务 (原 'blinko-website')
   main:
     # 关键: 替换 'build:' 为 'image:'
-    image: 'ghcr.io/blinko-app/blinko:latest'
+    image: 'blinkospace/blinko:latest'
     
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-blinko_main_1
@@ -63,4 +63,5 @@ services:
       test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
       interval: 5s
       timeout: 10s
+
       retries: 5
