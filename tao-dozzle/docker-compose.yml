@@ -17,20 +17,14 @@ services:
     restart: unless-stopped
 
     # 关键: 路径链 (必须保留 docker.sock)
-    # Dozzle 是无状态的，不需要 ${APP_DATA_DIR}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       
     # 关键: 权限链 (Case 2)
     # 省略 'user:' 字段，让容器以默认 root 身份运行
-    # 以便访问 docker.sock
     
     # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
       - "8080"
       
-    # 保留官方的环境变量（已注释）供你将来使用
-    environment:
-      # - DOZZLE_ENABLE_ACTIONS=true
-      # - DOZZLE_ENABLE_SHELL=true
-      # - DOZZLE_AUTH_PROVIDER=simple
+    # 修正: 移除空的 'environment:' 字段
