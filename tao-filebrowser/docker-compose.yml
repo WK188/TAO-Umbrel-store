@@ -16,13 +16,19 @@ services:
     
     restart: unless-stopped
 
-    # 关键: 路径链 (使用 Umbrel 标准路径，映射到内部 /srv)
-    volumes:
-      - ${APP_DATA_DIR}/data:/srv
-      
-    # 关键: 权限链
-    # 省略 'user:' 字段，让容器以默认 root 身份运行
+    # 关键: 权限链 (Case 2)
+    # 因为你需要管理宿主机的 /data 目录 (归 root 所有),
+    # 我们必须移除 user: '1000:1000' 行，让容器以 root 身份运行。
+    # user: '1000:1000'  <-- 移除这一行
     
+    # 关键: 路径链 (按你的要求修改)
+    volumes:
+      # /srv 映射到你指定的宿主机 /data 目录
+      - /data:/srv
+      # 数据库和配置映射到 Umbrel 自己的标准路径
+      - ${APP_DATA_DIR}/database:/database
+      - ${APP_DATA_DIR}/config:/config
+      
     # 关键: 端口链 (移除 'ports'，替换为 'expose' 内部 80 端口)
     expose:
       - "80"
