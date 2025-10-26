@@ -1,29 +1,39 @@
-version: '3.7'
 services:
   # 1. Umbrel 反向代理
   app_proxy:
     environment:
+      # 关键: 主机链 (匹配你的 id: tao-beszel-agent)
       APP_HOST: tao-beszel-agent_main_1
+      # 关键: 端口链 (匹配 Beszel Agent 内部端口)
       APP_PORT: 45876
 
   # 2. Beszel Agent 应用服务
   main:
     image: 'henrygd/beszel-agent'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-beszel-agent_main_1
+    
     restart: unless-stopped
+
+    # 关键: 路径链 (保留 docker.sock, 转换数据路径)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ${APP_DATA_DIR}/data:/var/lib/beszel-agent
       
+    # 关键: 权限链 (Case 2)
+    # 省 luglio 'user:' 字段，让容器以默认 root 身份运行
+    
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
       - "45876"
 
-    # 关键: 修正所有环境变量，移除所有引号
+    # 关键: 特殊配置
+    # 移除 'network_mode: host'
+    
+    # 关键: 保留所有官方环境变量 (应用我们 v4.0 的教训，移除 KEY 的引号)
     environment:
       - LISTEN=45876
-      
-      # 修正: 移除所有引号，YAML 会自动处理带空格的字符串
-      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEuQFLg1PH63cmv2IMIaA2mmGlojm8s+IkB/p/E4jRPO
-      
-      - TOKEN=15c7-f9b3fc8fce-4199-621388ce8c
+      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFpRxzVCbY3j4212QvPw/T1+GHPtrQp7fHPmPnKs6St
+      - TOKEN=1177b-f898bcfe5-de77-68b1c8437
       - HUB_URL=http://192.168.31.16:8090
