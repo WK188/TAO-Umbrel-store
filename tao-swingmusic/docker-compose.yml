@@ -1,0 +1,37 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-swingmusic)
+      APP_HOST: tao-swingmusic_main_1
+      # 关键: 端口链 (匹配 SwingMusic 内部端口)
+      APP_PORT: 1970
+      PROXY_AUTH_ADD: 'false'
+
+  # 2. SwingMusic 应用服务
+  # 关键: 服务名必须是 'main'
+  main:
+    # 关键: 移除了镜像末尾的 '>' 符号
+    image: 'ghcr.io/swingmx/swingmusic:v2.0.9@sha256:f8dcd4e074355de8fe5e8ae256c0af0441715a0eaf0bf2eabaebc654'
+
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-swingmusic_main_1
+
+    restart: on-failure
+
+    # 关键: 权限链 (Case 2 - 修正版)
+    # 强制以 root (0) 身份运行，以便访问 /root/... 目录
+    environment:
+      - PUID=0
+      - PGID=0
+
+    # 关键: 路径链 (包含你的云盘路径)
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/config
+      - ${APP_DATA_DIR}/data/music:/music:rw
+      - ${UMBREL_ROOT}/home/Downloads:/downloads
+      - /root/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首:/clouddrive_music:ro
+
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "1970"
