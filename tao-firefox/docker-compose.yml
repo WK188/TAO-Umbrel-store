@@ -2,27 +2,29 @@ services:
   # 1. Umbrel 反向代理
   app_proxy:
     environment:
-      # 关键: 主机链 (匹配你的 id: tao-firefox)
       APP_HOST: tao-firefox_main_1
-      # 关键: 端口链 (匹配 Firefox 内部端口)
       APP_PORT: 5800
 
   # 2. Firefox 应用服务
   main:
     image: 'jlesage/firefox'
-    
-    # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-firefox_main_1
-    
     restart: unless-stopped
-
-    # 关键: 路径链 (使用 Umbrel 标准路径)
     volumes:
       - ${APP_DATA_DIR}/data:/config
       
-    # 关键: 权限链
-    # 省略 'user:' 字段，让容器以默认 root 身份运行
-
-    # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
       - "5800"
+
+    # 关键: 权限链
+    # 省略 'user:' 字段
+    
+    # ------------------
+    # ⬇️ 关键修正 ⬇️
+    # ------------------
+    # 添加环境变量，强制容器使用中文 (zh_CN.UTF-8) 区域设置
+    # 这会告诉容器去加载你放在 /config/fonts 里的中文字体
+    environment:
+      - LANG=zh_CN.UTF-8
+      - LANGUAGE=zh_CN:zh
+      - LC_ALL=zh_CN.UTF-8
