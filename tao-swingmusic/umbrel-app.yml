@@ -8,7 +8,7 @@ id: tao-swingmusic
 name: SwingMusic
 
 # 标语
-tagline: A self-hosted music player
+tagline: 你的专属网盘音乐库
 
 # 图标
 icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
@@ -67,3 +67,4 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
