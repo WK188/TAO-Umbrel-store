@@ -14,6 +14,9 @@ services:
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-beszel-agent_main_1
     
+    # 关键修正: 强制设置主机名
+    hostname: armbian
+    
     restart: unless-stopped
 
     # 关键: 路径链 (保留 docker.sock, 转换数据路径)
@@ -22,7 +25,7 @@ services:
       - ${APP_DATA_DIR}/data:/var/lib/beszel-agent
       
     # 关键: 权限链 (Case 2)
-    # 省 luglio 'user:' 字段，让容器以默认 root 身份运行
+    # 省略 'user:' 字段，让容器以默认 root 身份运行
     
     # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
@@ -31,9 +34,10 @@ services:
     # 关键: 特殊配置
     # 移除 'network_mode: host'
     
-    # 关键: 保留所有官方环境变量 (应用我们 v4.0 的教训，移除 KEY 的引号)
+    # 关键: 保留所有官方环境变量 (应用 v4.0 教训, 移除 KEY 的引号)
     environment:
       - LISTEN=45876
-      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFpRxzVCbY3j4212QvPw/T1+GHPtrQp7fHPmPnKs6St
-      - TOKEN=1177b-f898bcfe5-de77-68b1c8437
+      # 修正: 移除所有引号
+      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNbIrv9sNdWXYeec6fcQBb3UTW4FWij+1Xuqggtaodv
+      - TOKEN=3de-1e90b01a212-148fc-e91743955
       - HUB_URL=http://192.168.31.16:8090
