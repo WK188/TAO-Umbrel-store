@@ -11,7 +11,7 @@ name: Beszel
 tagline: A simple, self-hosted commenting server.
 
 # 图标
-icon: https://img.heliar.top/file/1761361099415_beszel.png
+icon: https://img.heliar.top/file/1761528717148_Beszel.png
 
 # 分类
 category: Development
@@ -65,4 +65,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
