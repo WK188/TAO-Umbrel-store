@@ -20,14 +20,18 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      # 1. 配置文件路径 (不变)
-      - ${APP_DATA_DIR}/config:/config
+      # 1. <<< 关键修正 >>>
+      # 修正为官方正确的 config 路径
+      - ${APP_DATA_DIR}/data/config:/config
       
-      # 2. <<< 核心修改 (B 计划) >>>
-      # 我们挂载不含中文或空格的父目录
-      - /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts:/clouddrive:rw
+      # 2. 保留官方的 music 路径 (它会创建 /music 目录)
+      - ${APP_DATA_DIR}/data/music:/music:rw
       
-      # 3. 下载目录 (不变)
+      # 3. 保留下载路径
       - ${UMBREL_ROOT}/home/Downloads:/downloads
+      
+      # 4. <<< 添加我们的B计划路径 >>>
+      # 这次是“添加”，而不是“替换”
+      - /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts:/clouddrive:rw
       
     container_name: tao-swingmusic_app_1
