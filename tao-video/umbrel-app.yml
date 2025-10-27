@@ -1,10 +1,10 @@
 # 清单版本号
 manifestVersion: 1
 
-# 关键: 你的商店 ID
+# 关键: 使用你正确的 ID
 id: tao-video
 
-# 应用显示名称
+# 应用显示名称 (我改成了 "X Downloader")
 name: X Downloader
 
 # 标语
