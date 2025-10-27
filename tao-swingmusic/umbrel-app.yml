@@ -2,7 +2,7 @@ manifestVersion: 1
 id: tao-swingmusic
 name: Swing Music
 tagline: Tao 的专属网盘音乐库 (C计划-修正版)
-icon: https://raw.githubusercontent.com/swingmx/swingmusic/master/static/images/icon.png
+icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
 category: media
 version: "2.0.9"
 port: 1970
@@ -36,3 +36,4 @@ dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+
