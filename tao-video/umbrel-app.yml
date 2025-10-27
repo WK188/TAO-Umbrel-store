@@ -1,6 +1,6 @@
 manifestVersion: 1
 id: tao-video
-name: X Downloader (Link) # 加个 (Link) 区分
+name: X Downloader
 tagline: Link to external video downloader.
 description: >-
   A launcher page that redirects to the external 
