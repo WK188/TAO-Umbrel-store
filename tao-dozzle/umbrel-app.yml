@@ -11,7 +11,7 @@ name: Dozzle
 tagline: Real-time log viewer for containers.
 
 # 图标
-icon: https://img.heliar.top/file/1761359212059_Dozzle.png
+icon: https://img.heliar.top/file/1761532912214_Dozzle.png
 
 # 分类
 category: Development
@@ -65,4 +65,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
