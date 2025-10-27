@@ -1,70 +1,39 @@
-# 清单版本号
 manifestVersion: 1
-
-# 关键：应用唯一 ID
 id: tao-swingmusic
-
-# 应用显示名称
-name: SwingMusic
-
-# 标语
-tagline: 你的专属网盘音乐库
-
-# 图标
+name: Swing Music
+tagline: Tao 的专属网盘音乐库 (B计划)
 icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
-
-# 分类
-category: Development
-
-# 版本号
-version: "1.0.0"
-
-# 关键：端口号 (必须是 容器 内部运行的 端口)
+category: media
+version: "2.0.9"
 port: 1970
-
-# 详细描述
 description: >-
-  Beszel is a simple, lightweight, self-hosted commenting server. 
-  It's designed to be easy to deploy and integrate into any website.
-
-# 开发者
-developer: TAO
-
-# 网站 (修正：指向 metube 仓库)
-website: https://github.com/alexta69/metube
-
-# 提交者
-submitter: TAO
-
-# 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
-
-# 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
-
-# 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
-
-# 截图
+  这是一个为 Tao 定制的 Swing Music 版本 (B 计划)。
+  
+  此版本会将主机的 /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts 目录
+  映射到容器内的 /clouddrive 目录。
+  
+  !!! 重要 !!!
+  安装后，你必须手动进入 Swing Music 的设置 > 文件夹 > 添加文件夹，
+  并输入以下路径：
+  /clouddrive/阿里网盘/个人文件/无损音乐545首
+developer: Swing Music Team (Customized by Tao)
+website: https://swingmusic.io/
+submitter: Tao
+submission: https://github.com/swingmx/swingmusic
+repo: https://github.com/swingmx/swingmusic
+support: https://github.com/swingmx/swingmusic/issues
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-
-# 版本说明
+  - https://swingmusic.io/images/screenshots/albums.png
+  - https://swingmusic.io/images/screenshots/artists.png
+  - https://swingmusic.io/images/screenshots/now-playing.png
 releaseNotes: >-
-  First release on this Umbrel.
-
-# 依赖
+  (B 计划)
+  将主机的 /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts 路径
+  映射到容器内的 /clouddrive 目录。
+  
+  安装后，请在应用设置中手动添加你的音乐文件夹路径：
+  /clouddrive/阿里网盘/个人文件/无损音乐545首
 dependencies: []
-
-# 路径
 path: ""
-
-# 默认用户名
 defaultUsername: ""
-
-# 默认密码
-
 defaultPassword: ""
-
