@@ -11,7 +11,7 @@ name: SwingMusic
 tagline: A self-hosted music player
 
 # 图标
-icon: https://img.heliar.top/file/1761491673811_Swing_Music.png
+icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
 
 # 分类
 category: Development
@@ -65,4 +65,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
