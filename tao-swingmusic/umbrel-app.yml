@@ -1,18 +1,13 @@
 manifestVersion: 1
 id: tao-swingmusic
-name: Swing Music (Tao F)
-tagline: Tao 的专属网盘音乐库 (F计划-最终正确版)
+name: Swing Music
+tagline: Beautiful and fast music streaming server.
 icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
 category: media
 version: "2.0.9"
 port: 1970
 description: >-
-  (F 计划) 最终正确版。
-  
-  之前的失败是因为我错误地修改了 app_proxy 的配置。
-  
-  此版本使用 100% 官方的 `docker-compose.yml` 结构，仅修改了容器名称。
-  安装“必须”成功。
+  Enjoy your music in a beautiful and modern UI
 developer: Swing Music Team (Customized by Tao)
 website: https://swingmusic.io/
 submitter: Tao
@@ -44,3 +39,4 @@ dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+
