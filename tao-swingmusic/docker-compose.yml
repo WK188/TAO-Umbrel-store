@@ -6,7 +6,7 @@ services:
       APP_PORT: 1970
       PROXY_AUTH_ADD: 'false'
     container_name: tao-swingmusic_app_proxy_1
-    restart: on-failure # 代理服务保持 on-failure 即可
+    restart: on-failure
     volumes:
       - ${APP_PROXY_DATA_DIR}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
@@ -15,18 +15,19 @@ services:
   app:
     image: >-
       ghcr.io/swingmx/swingmusic:v2.0.9@sha256:f8dcd4e074355de8fe5e8ae256c0af0441715a0eaf0bf2eabaebc65447ea716c
-    restart: unless-stopped # 修改重启策略
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
     volumes:
-      # 1. 配置文件路径
+      # 1. 配置文件路径 (不变)
       - ${APP_DATA_DIR}/config:/config
       
-      # 2. <<< 核心修改：给音乐文件路径加引号 >>>
-      - '/DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首:/music:rw'
+      # 2. <<< 核心修改 (B 计划) >>>
+      # 我们挂载不含中文或空格的父目录
+      - /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts:/clouddrive:rw
       
-      # 3. 下载目录
+      # 3. 下载目录 (不变)
       - ${UMBREL_ROOT}/home/Downloads:/downloads
       
     container_name: tao-swingmusic_app_1
