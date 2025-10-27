@@ -11,7 +11,7 @@ name: Clouddrive2
 tagline: 解锁云存储的无限可能
 
 # 图标
-icon: https://img.heliar.top/file/1761352387843_Clouddrive.png
+icon: https://img.heliar.top/file/1761553549463_Clouddrive.png
 
 # 分类
 category: Development
@@ -64,4 +64,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
