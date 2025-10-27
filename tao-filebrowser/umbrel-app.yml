@@ -11,7 +11,7 @@ name: FileBrowser
 tagline: Web File Manager
 
 # 图标
-icon: https://img.heliar.top/file/1761356608408_Filebrowser.png
+icon: https://img.heliar.top/file/1761533310940_Filebrowser.png
 
 # 分类
 category: Development
@@ -65,4 +65,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
