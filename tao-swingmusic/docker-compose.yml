@@ -12,6 +12,7 @@ services:
       - ${APP_PROXY_DATA_DIR}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - app
+
   app:
     image: >-
       ghcr.io/swingmx/swingmusic:v2.0.9@sha256:f8dcd4e074355de8fe5e8ae256c0af0441715a0eaf0bf2eabaebc65447ea716c
@@ -20,7 +21,11 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ${APP_DATA_DIR}/data/config:/config
-      - ${APP_DATA_DIR}/data/music:/music:rw
+      # --- <<< E 计划: 核心修正 >>> ---
+      # 路径改为基于 ${APP_DATA_DIR}，而不是 ${APP_DATA_DIR}/data
+      # Umbrel 的自定义商店只会创建 ${APP_DATA_DIR}
+      # Docker 会自动创建 config 和 music 目录
+      - ${APP_DATA_DIR}/config:/config
+      - ${APP_DATA_DIR}/music:/music:rw
       - ${UMBREL_ROOT}/home/Downloads:/downloads
     container_name: tao-swingmusic_app_1
