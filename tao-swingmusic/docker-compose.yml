@@ -1,27 +1,36 @@
 services:
-  # 1. Umbrel 反向代理
   app_proxy:
+    image: getumbrel/umbrel-app-proxy:v1.1.0
     environment:
-      APP_HOST: tao-swingmusic_main_1
+      # APP_HOST 必须匹配下面 app 服务的 container_name
+      APP_HOST: swingmusic-custom_app_1
       APP_PORT: 1970
       PROXY_AUTH_ADD: 'false'
-
-  # 2. SwingMusic 应用服务
-  main:
-    image: 'ghcr.io/swingmx/swingmusic:v2.0.9@sha256:f8dcd4e074355de8fe5e8ae256c0af0441715a0eaf0bf2eabaebc654'
-    container_name: tao-swingmusic_main_1
+    container_name: swingmusic-custom_app_proxy_1 # 唯一的容器名
     restart: on-failure
-    
-    # 关键：按照您的建议，使用 user: '0:0' 强制 root 权限
-    user: '0:0'
-    
     volumes:
-      - ${APP_DATA_DIR}/data/config:/config
-      - ${APP_DATA_DIR}/data/music:/music:rw
-      
-      # --- 保持注释，用于最小化测试 ---
-      # - ${UMBREL_ROOT}/home/Downloads:/downloads
-      - /root/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首:/clouddrive_music:ro
+      - ${APP_PROXY_DATA_DIR}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
 
-    expose:
-      - "1970"
+  app:
+    image: >-
+      ghcr.io/swingmx/swingmusic:v2.0.9@sha256:f8dcd4e074355de8fe5e8ae256c0af0441715a0eaf0bf2eabaebc65447ea716c
+    restart: on-failure
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      # 1. 配置文件路径 (使用 Umbrel 变量)
+      - ${APP_DATA_DIR}/config:/config
+      
+      # 2. <<< 核心修改：音乐文件路径 >>>
+      # 我们在这里硬编码你的阿里网盘挂载路径(主机路径)
+      # 并将其映射到容器内的 /music 目录
+      # Swing Music 默认会扫描 /music 目录
+      - /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首:/music:rw
+      
+      # 3. 保留原来的下载目录映射 (以防万一)
+      - ${UMBREL_ROOT}/home/Downloads:/downloads
+      
+    container_name: swingmusic-custom_app_1 # 唯一的容器名
