@@ -1,15 +1,16 @@
 manifestVersion: 1
 id: tao-swingmusic
-name: Swing Music (Tao D)
-tagline: Tao 的专属网盘音乐库 (D计划-Symlink)
+name: Swing Music (Tao E)
+tagline: Tao 的专属网盘音乐库 (E计划-最终版)
 icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
 category: media
 version: "2.0.9"
 port: 1970
 description: >-
-  (D 计划) 最终符号链接方案。
-  此版本使用100%官方配置，必须能安装成功。
-  安装后，请“必须”通过 SSH 执行链接步骤。
+  (E 计划) 最终修正版。
+  我们发现自定义应用商店的路径规则和官方商店不同。
+  官方商店使用 /data 子目录，但自定义商店不会创建它，导致安装闪回。
+  此版本修正了该路径，安装“必须”成功。
 developer: Swing Music Team (Customized by Tao)
 website: https://swingmusic.io/
 submitter: Tao
@@ -21,15 +22,24 @@ gallery:
   - https://swingmusic.io/images/screenshots/artists.png
   - https://swingmusic.io/images/screenshots/now-playing.png
 releaseNotes: >-
-  (D 计划 - Symlink 方案)
-  1. 安装 "Swing Music (Tao D)"。
-  2. SSH 登录到主机。
-  3. `cd /DATA/AppData/umbrel/app-data/tao-swingmusic/data/music`
-  4. `ln -s "/DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首" "MyCloudMusic"`
-  5. `chmod -R 777 .` (!!! 新增权限步骤 !!!)
-  6. 打开应用，在设置 > 文件夹中扫描 /music/MyCloudMusic 目录。
+  (E 计划 - 路径修正版)
+  1. 安装 "Swing Music (Tao E)"。
+  
+  2. 安装“必须”成功。
+  
+  3. 通过 SSH 登录到你的 Umbrel 主机。
+  
+  4. 切换到你的 `tao-swingmusic` 应用的数据目录 (注意，没有 /data 了)：
+     `cd /DATA/AppData/umbrel/app-data/tao-swingmusic/music`
+     (Docker 会自动创建这个 /music 目录)
+  
+  5. 在这里创建一个指向你网盘音乐的“符号链接” (symlink)，注意路径的引号：
+     `ln -s "/DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首" "MyCloudMusic"`
+  
+  6. 打开 Swing Music 应用，进入设置 > 文件夹。
+  
+  7. 你现在会在 /music 目录下看到一个叫 "MyCloudMusic" 的文件夹。点击它并开始扫描。
 dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
-
