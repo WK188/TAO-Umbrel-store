@@ -1,13 +1,13 @@
 manifestVersion: 1
 id: tao-swingmusic
 name: Swing Music
-tagline: Tao 的专属网盘音乐库 (B计划)
-icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
+tagline: Tao 的专属网盘音乐库 (C计划-修正版)
+icon: https://raw.githubusercontent.com/swingmx/swingmusic/master/static/images/icon.png
 category: media
 version: "2.0.9"
 port: 1970
 description: >-
-  这是一个为 Tao 定制的 Swing Music 版本 (B 计划)。
+  这是一个为 Tao 定制的 Swing Music 版本 (C 计划)。
   
   此版本会将主机的 /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts 目录
   映射到容器内的 /clouddrive 目录。
@@ -27,9 +27,8 @@ gallery:
   - https://swingmusic.io/images/screenshots/artists.png
   - https://swingmusic.io/images/screenshots/now-playing.png
 releaseNotes: >-
-  (B 计划)
-  将主机的 /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts 路径
-  映射到容器内的 /clouddrive 目录。
+  (C 计划 - 修正版)
+  修正了 docker-compose.yml 中导致安装失败的 /config 路径错误。
   
   安装后，请在应用设置中手动添加你的音乐文件夹路径：
   /clouddrive/阿里网盘/个人文件/无损音乐545首
