@@ -1,17 +1,11 @@
 version: '3.9'
 services:
   app_proxy:
-    image: getumbrel/umbrel-app-proxy:v1.1.0
     environment:
-      APP_HOST: tao-swingmusic_app_1
+      APP_HOST: tao-swingmusic_app_1 # <--- 修改点 1
       APP_PORT: 1970
       PROXY_AUTH_ADD: 'false'
-    container_name: tao-swingmusic_app_proxy_1
-    restart: on-failure
-    volumes:
-      - ${APP_PROXY_DATA_DIR}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - app
+    container_name: tao-swingmusic_app_proxy_1 # <--- 修改点 2
 
   app:
     image: >-
@@ -21,11 +15,8 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      # --- <<< E 计划: 核心修正 >>> ---
-      # 路径改为基于 ${APP_DATA_DIR}，而不是 ${APP_DATA_DIR}/data
-      # Umbrel 的自定义商店只会创建 ${APP_DATA_DIR}
-      # Docker 会自动创建 config 和 music 目录
-      - ${APP_DATA_DIR}/config:/config
-      - ${APP_DATA_DIR}/music:/music:rw
+      # 我们使用 100% 官方的路径
+      - ${APP_DATA_DIR}/data/config:/config
+      - ${APP_DATA_DIR}/data/music:/music:rw
       - ${UMBREL_ROOT}/home/Downloads:/downloads
-    container_name: tao-swingmusic_app_1
+    container_name: tao-swingmusic_app_1 # <--- 修改点 3
