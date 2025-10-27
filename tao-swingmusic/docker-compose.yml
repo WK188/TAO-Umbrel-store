@@ -1,11 +1,12 @@
 version: '3.9'
 services:
   app_proxy:
+    # 1. 使用 F 计划的、正确的 app_proxy (没有多余内容)
     environment:
-      APP_HOST: tao-swingmusic_app_1 # <--- 修改点 1
+      APP_HOST: tao-swingmusic_app_1
       APP_PORT: 1970
       PROXY_AUTH_ADD: 'false'
-    container_name: tao-swingmusic_app_proxy_1 # <--- 修改点 2
+    container_name: tao-swingmusic_app_proxy_1
 
   app:
     image: >-
@@ -15,8 +16,14 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      # 我们使用 100% 官方的路径
+      # 2. 使用 F 计划的、正确的 config 和 music 路径
       - ${APP_DATA_DIR}/data/config:/config
-      - ${APP_DATA_DIR}/data/music:/music:rw
+      - ${APP_DATA_DIR}/data/music:/music:rw 
       - ${UMBREL_ROOT}/home/Downloads:/downloads
-    container_name: tao-swingmusic_app_1 # <--- 修改点 3
+      
+      # 3. <<< I 计划的核心 >>>
+      # 添加 B 计划的挂载 (我们现在知道这不会导致闪回了)
+      # 我们把你的网盘挂载点，映射到容器内的 /clouddrive 目录
+      - /DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts:/clouddrive:ro
+      
+    container_name: tao-swingmusic_app_1
