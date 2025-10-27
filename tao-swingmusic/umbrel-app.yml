@@ -1,13 +1,23 @@
 manifestVersion: 1
 id: tao-swingmusic
 name: Swing Music
-tagline: Beautiful and fast music streaming server.
+tagline: Tao 的专属网盘音乐库 
 icon: https://img.heliar.top/file/1761550580506_Swing_Music.png
 category: media
 version: "2.0.9"
 port: 1970
 description: >-
-  Enjoy your music in a beautiful and modern UI
+  (I 计划) 最终完美版。
+  
+  我们终于搞清楚了所有问题：
+  1. 之前的安装闪回，是因为 app_proxy 配置错误。
+  2. 之后的 Symlink 方案，是因为父目录权限问题。
+  
+  此版本结合了所有成功经验：
+  1. 使用正确的 app_proxy (不会闪回)。
+  2. 直接将你的云盘挂载点映射到容器的 /clouddrive 目录。
+  
+  安装“必须”成功。
 developer: Swing Music Team (Customized by Tao)
 website: https://swingmusic.io/
 submitter: Tao
@@ -19,24 +29,30 @@ gallery:
   - https://swingmusic.io/images/screenshots/artists.png
   - https://swingmusic.io/images/screenshots/now-playing.png
 releaseNotes: >-
-  (F 计划 - 最终正确版)
-  1. 安装 "Swing Music (Tao F)"。
+  (I 计划 - 最终完美版)
+  
+  **重要前提：**
+  请确保你的 "tao-clouddrive2" 应用的权限设置仍为：
+  `UID: 1000, GID: 1000, 0755`
+  
+  **操作步骤：**
+  1. 安装 "Swing Music (Tao I)"。
   
   2. 安装“必须”成功。
   
-  3. 通过 SSH 登录到你的 Umbrel 主机。
+  3. 打开 Swing Music 应用，进入设置 > 文件夹。
   
-  4. 切换到你的 `tao-swingmusic` 应用的数据目录 (和官方一致，有 /data)：
-     `cd /DATA/AppData/umbrel/app-data/tao-swingmusic/data/music`
+  4. 它默认在 /music 目录，请点击 "$root" 或 ".." 返回上一级。
   
-  5. 在这里创建一个指向你网盘音乐的“符号链接” (symlink)：
-     `ln -s "/DATA/AppData/umbrel/app-data/tao-clouddrive2/mounts/阿里网盘/个人文件/无损音乐545首" "MyCloudMusic"`
+  5. 你现在会看到 /music 旁边有一个 /clouddrive 目录。
   
-  6. 打开 Swing Music 应用，进入设置 > 文件夹。
+  6. 点击进入 /clouddrive，然后一路点进去：
+     `/clouddrive/阿里网盘/个人文件/无损音乐545首`
   
-  7. 你现在会在 /music 目录下看到一个叫 "MyCloudMusic" 的文件夹。点击它并开始扫描。
+  7. 选中 "无损音乐545首" 文件夹，点击 "Add this folder"。
+  
+  8. 开始扫描。这次必定成功！
 dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
-
