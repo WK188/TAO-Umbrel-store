@@ -5,15 +5,15 @@ manifestVersion: 1
 id: tao-video
 
 # 应用显示名称
-name: X Video Downloader
+name: X Downloader
 
 # 标语
 tagline: Link to external video downloader.
 
 # 描述
 description: >-
-  A simple link icon that proxies the web UI 
-  from http://100.101.113.69:7860.
+  A launcher page that provides a link to the external 
+  video downloader at http://100.101.113.69:7860.
   
 # 应用分类
 category: media
@@ -34,7 +34,6 @@ submitter: TAO
 website: http://100.101.113.69:7860
 repo: https://github.com/
 support: https://github.com/
-# (你可以找一个视频下载的图标链接)
 icon: https://img.heliar.top/file/1761558300187_X.png
 gallery: []
 releaseNotes: "First version for TAO App Store."
