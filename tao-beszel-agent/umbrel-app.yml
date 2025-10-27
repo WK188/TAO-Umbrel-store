@@ -11,7 +11,7 @@ name: Beszel Agent
 tagline: A simple, self-hosted monitoring agent.
 
 # 图标
-icon: https://img.heliar.top/file/1761382995999_Beszel_Agent.png
+icon: https://img.heliar.top/file/1761530266767_Beszel_Agent.png
 
 # 分类
 category: Development
@@ -65,4 +65,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
