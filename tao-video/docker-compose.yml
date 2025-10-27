@@ -1,0 +1,24 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (欺骗)
+      # 强制 APP_HOST 指向你的 *外部* 视频下载器 IP
+      APP_HOST: 100.101.113.69
+      
+      # 关键: 端口链
+      # 强制 APP_PORT 指向你的 *外部* 视频下载器端口
+      APP_PORT: 7860
+
+  # 2. “欺骗”应用服务
+  # 关键: 服务名必须是 'main'，否则 app-manager 会拒绝安装
+  main:
+    # 使用一个最小的、什么也不做的镜像
+    image: 'alpine:latest'
+    
+    # 关键: 主机链 (必须提供一个匹配 ID 的容器名)
+    # 即使 app_proxy 没在用它，app-manager 也会检查它
+    container_name: tao-video-link_main_1
+    
+    # 让这个容器永远“睡眠”，不占用任何资源
+    command: ["sleep", "infinity"]

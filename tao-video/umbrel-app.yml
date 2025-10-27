@@ -1,0 +1,44 @@
+# 清单版本号
+manifestVersion: 1
+
+# 关键: 你的商店 ID
+id: tao-video
+
+# 应用显示名称
+name: X Video Downloader
+
+# 标语
+tagline: Link to external video downloader.
+
+# 描述
+description: >-
+  A simple link icon that proxies the web UI 
+  from http://100.101.113.69:7860.
+  
+# 应用分类
+category: media
+
+# 版本号
+version: "1.0.0"
+
+# 关键: 端口链 (Umbrel 将监听 7860 端口)
+port: 7860
+
+# 关键: 你的开发者名称
+developer: TAO
+
+# 关键: 你的提交者名称
+submitter: TAO
+
+# --- 填充信息 ---
+website: http://100.101.113.69:7860
+repo: https://github.com/
+support: https://github.com/
+# (你可以找一个视频下载的图标链接)
+icon: https://img.heliar.top/file/1761558300187_X.png
+gallery: []
+releaseNotes: "First version for TAO App Store."
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
