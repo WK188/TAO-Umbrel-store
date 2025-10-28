@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: "tao-application" # <-- 关键：你指定的新应用ID
+name: "Application" # <-- 关键：你指定的新应用名称 (我帮你美化了一下)
+tagline: My custom service launcher.
+description: >-
+  A simple launcher page with buttons 
+  to access all my other docker services.
+category: utilities # 分类我改成了"工具"
+version: "1.0.0"
+port: 8998 # <-- 关键：我为你选了一个新的、未被占用的端口
+developer: TAO # 按照你的模板
+submitter: TAO # 按照你的模板
+website: ""
+repo: ""
+support: ""
+icon: "https://img.heliar.top/file/1761617760455_12.png"
+gallery: []
+releaseNotes: "First version of my custom launcher."
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
