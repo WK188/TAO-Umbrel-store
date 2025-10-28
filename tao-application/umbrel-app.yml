@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: "application" # <-- 关键：你指定的新应用ID
+id: "tao-application" # <-- 关键：你指定的新应用ID
 name: "Application" # <-- 关键：你指定的新应用名称 (我帮你美化了一下)
 tagline: My custom service launcher.
 description: >-
