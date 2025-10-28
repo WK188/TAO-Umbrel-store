@@ -24,8 +24,8 @@ port: 8090
 
 # 详细描述
 description: >-
-  Beszel 是一个轻量级的服务器监控平台，包含 Docker 统计信息、历史数据和警报功能。
-它拥有友好的 Web 界面、简单的配置，并且开箱即用。它支持自动备份、多用户、OAuth 身份验证和 API 访问。
+  The agent for the Beszel monitoring system. 
+  It collects data from Docker and the host system.
 
 # 开发者
 developer: TAO
@@ -67,5 +67,6 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
