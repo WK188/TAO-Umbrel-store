@@ -8,7 +8,7 @@ id: tao-beszel-agent
 name: Beszel Agent
 
 # 标语
-tagline: 在您要监控的每个系统上运行，并将系统指标传递给中心。
+tagline: 在您要监控的每个系统上运行
 
 # 图标
 icon: https://img.heliar.top/file/1761530266767_Beszel_Agent.png
@@ -64,4 +64,5 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
