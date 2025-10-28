@@ -8,7 +8,7 @@ id: tao-dozzle
 name: Dozzle
 
 # 标语
-tagline: Real-time log viewer for containers.
+tagline: 简单的容器监控和日志记录
 
 # 图标
 icon: https://img.heliar.top/file/1761532912214_Dozzle.png
@@ -49,9 +49,7 @@ support: https://dozzle.dev/guide/what-is-dozzle
 
 # 截图
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://img.heliar.top/file/1761644567722_截图-Dozzle.png
 
 # 版本说明
 releaseNotes: >-
@@ -69,4 +67,5 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
