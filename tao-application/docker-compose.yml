@@ -3,13 +3,13 @@ services:
     environment:
       # 关键：APP_HOST 必须指向 main 服务的容器名
       # 默认规则是 [id]_[service_name]_1
-      APP_HOST: application_main_1
+      APP_HOST: tao-application_main_1
       APP_PORT: 80 # NGINX 内部端口是 80
   
   main:
     image: 'nginx:alpine'
     # 关键：容器名要和 APP_HOST 对应
-    container_name: application_main_1
+    container_name: tao-application_main_1
     restart: unless-stopped
     volumes:
       # 关键：这完全遵照你的模板
