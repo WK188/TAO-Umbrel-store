@@ -8,7 +8,7 @@ id: tao-clouddrive2
 name: Clouddrive2
 
 # 标语
-tagline: 解锁云存储的无限可能
+tagline: 强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案
 
 # 图标
 icon: https://img.heliar.top/file/1761553549463_Clouddrive.png
@@ -24,7 +24,10 @@ port: 19798
 
 # 详细描述
 description: >-
-  CloudDrive是一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案。
+  CloudDrive是一个全方位的云存储管理平台，旨在无缝集成多个云存储服务，将它们统一整合到一个界面中。
+  使用CloudDrive，您可以轻松管理和访问所有云存储服务，无需在不同的应用程序和界面之间来回切换。
+  CloudDrive最引人注目的特点是其能够将多个云存储服务挂载为本地磁盘，直接访问文件而无需预先下载。想象一下，您可以将云存储服务当作本地文件系统的一部分来使用，带来的便利性不言而喻。
+  但这还不是全部 - CloudDrive还提供了高级功能，如快速的云端文件传输、实时的云文件通知和应用级别的权限控制。无论您是高级用户还是普通云存储用户，CloudDrive都能以卓越的效率和易用性让您充分发挥云存储资源的潜力。
 
 # 开发者
 developer: TAO
@@ -66,4 +69,5 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
