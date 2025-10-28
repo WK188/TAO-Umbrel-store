@@ -24,7 +24,7 @@ port: 5244
 
 # 详细描述
 description: >-
-  一个支持多种存储的文件列表程序，使用 Gin 和 SolidJS
+  OpenList 是一个支持多种存储的文件列表程序🗂️，是一个有韧性、长期治理、社区驱动的 AList 分支🔀，旨在防御基于信任的开源攻击🛡️。
 
 # 开发者
 developer: TAO
@@ -36,13 +36,13 @@ website: https://github.com/alexta69/metube
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://github.com/OpenListTeam/OpenList
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://github.com/OpenListTeam/OpenList
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://doc.oplist.org/guide
 
 # 截图
 gallery:
