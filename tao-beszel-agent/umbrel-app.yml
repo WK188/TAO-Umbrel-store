@@ -8,7 +8,7 @@ id: tao-beszel-agent
 name: Beszel Agent
 
 # 标语
-tagline: A simple, self-hosted monitoring agent.
+tagline: 在您要监控的每个系统上运行，并将系统指标传递给中心。
 
 # 图标
 icon: https://img.heliar.top/file/1761530266767_Beszel_Agent.png
@@ -24,8 +24,7 @@ port: 45876
 
 # 详细描述
 description: >-
-  The agent for the Beszel monitoring system. 
-  It collects data from Docker and the host system.
+  包含 Docker 统计信息、历史数据和警报功能
 
 # 开发者
 developer: TAO
@@ -37,19 +36,17 @@ website: https://github.com/alexta69/metube
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://github.com/henrygd/beszel
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://github.com/henrygd/beszel
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://beszel.dev/zh/guide/what-is-beszel
 
 # 截图
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://img.heliar.top/file/1761642764736_截图-beszel2.png
 
 # 版本说明
 releaseNotes: >-
@@ -67,3 +64,4 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
