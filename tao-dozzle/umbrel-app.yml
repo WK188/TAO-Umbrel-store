@@ -24,26 +24,28 @@ port: 8080
 
 # 详细描述
 description: >-
-  Dozzle is a small, lightweight application that provides a web interface 
-  to monitor and view the logs of your running Docker containers.
+  Dozzle 是一个由 Docker OSS 赞助的开源项目。它是一个日志查看器，旨在简化容器的监控和调试。这款轻量级的 Web 应用程序通过直观的用户界面提供实时日志流式传输、过滤和搜索功能。
+  用户可以快速访问 Docker 容器生成的日志，使其成为 Docker 环境中应用程序调试和故障排除的必备工具。默认情况下，Dozzle 支持带有智能颜色编码的 JSON 日志。
+  
+  Dozzle 易于安装和配置，对于寻求高效、用户友好的 Docker 环境日志查看器的开发人员和系统管理员来说，它是理想的解决方案。该工具采用 MIT 许可证，并由其开发者 Amir Raminfar 积极维护。
 
 # 开发者
 developer: TAO
 
 # 网站 (修正：指向 metube 仓库)
-website: https://github.com/alexta69/metube
+website: https://dozzle.dev/
 
 # 提交者
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://github.com/amir20/dozzle
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://github.com/amir20/dozzle
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://dozzle.dev/guide/what-is-dozzle
 
 # 截图
 gallery:
@@ -67,3 +69,4 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
