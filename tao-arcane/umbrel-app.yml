@@ -8,7 +8,7 @@ id: tao-arcane
 name: Arcane
 
 # 标语
-tagline: Modern Docker Management
+tagline: 现代化Docker管理平台，专为每个人设计。
 
 # 图标
 icon: https://img.heliar.top/file/1761530498136_Arcane.png
@@ -24,7 +24,7 @@ port: 3552
 
 # 详细描述
 description: >-
-  Modern Docker Management, Designed for Everyone.
+  Arcane 旨在打造一个简单易用的现代化Docker管理平台，以人为本。Arcane 的目标是由社区构建，服务社区，确保每个人都不会因其特定功能或流程而感到被冷落或落后。
 
 # 开发者
 developer: TAO
@@ -36,13 +36,13 @@ website: https://github.com/alexta69/metube
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://github.com/ofkm/arcane
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://github.com/ofkm/arcane
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://arcane.ofkm.dev/docs
 
 # 截图
 gallery:
