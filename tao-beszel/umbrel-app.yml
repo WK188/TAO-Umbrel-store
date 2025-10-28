@@ -8,7 +8,7 @@ id: tao-beszel
 name: Beszel
 
 # 标语
-tagline: A simple, self-hosted commenting server.
+tagline: 轻量易用的服务器监控
 
 # 图标
 icon: https://img.heliar.top/file/1761528717148_Beszel.png
@@ -24,8 +24,17 @@ port: 8090
 
 # 详细描述
 description: >-
-  Beszel is a simple, lightweight, self-hosted commenting server. 
-  It's designed to be easy to deploy and integrate into any website.
+  Beszel 是一个轻量级的服务器监控平台，包含 Docker 统计信息、历史数据和警报功能。
+它拥有友好的 Web 界面、简单的配置，并且开箱即用。它支持自动备份、多用户、OAuth 身份验证和 API 访问。
+  功能
+轻量级: 比主要解决方案更小，资源占用更少。
+简单: 易于设置，无需公网暴露。
+Docker 统计: 跟踪每个容器的 CPU、内存和网络使用历史。
+警报: 可配置 CPU、内存、磁盘、带宽、温度、负载平均值和状态的警报。
+多用户: 用户管理自己的系统。管理员可以在用户之间共享系统。
+OAuth / OIDC: 支持多种 OAuth2 提供程序。可以禁用密码验证。
+自动备份: 从磁盘或 S3 兼容的存储保存和恢复数据。
+电池: 主机系统电池电量。
 
 # 开发者
 developer: TAO
@@ -67,3 +76,4 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
