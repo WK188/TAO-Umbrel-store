@@ -56,9 +56,8 @@ support: https://beszel.dev/guide/what-is-beszel
 
 # 截图
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://img.heliar.top/file/1761642768829_截图-beszel1.png
+  - https://img.heliar.top/file/1761642764736_截图-beszel2.png
 
 # 版本说明
 releaseNotes: >-
@@ -76,6 +75,7 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
 
