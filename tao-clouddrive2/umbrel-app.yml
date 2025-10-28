@@ -24,25 +24,25 @@ port: 19798
 
 # 详细描述
 description: >-
-  Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.
+  CloudDrive是一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案。
 
 # 开发者
 developer: TAO
 
 # 网站 (修正：指向 metube 仓库)
-website: https://github.com/alexta69/metube
+website: https://www.clouddrive2.com/index.html
 
 # 提交者
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://www.clouddrive2.com/index.html
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://www.clouddrive2.com/index.html
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://www.clouddrive2.com/help.html
 
 # 截图
 gallery:
@@ -66,3 +66,4 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
