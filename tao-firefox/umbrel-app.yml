@@ -8,7 +8,7 @@ id: tao-firefox
 name: Firefox
 
 # 标语
-tagline: Firefox browser in a container.
+tagline: Mozilla 公司开发的免费开源网络浏览器
 
 # 图标
 icon: https://img.heliar.top/file/1761354857492_Firefox.png
@@ -24,7 +24,7 @@ port: 5800
 
 # 详细描述
 description: >-
-  A containerized version of the Firefox browser, accessible via VNC in your web browser.
+  该应用程序的图形用户界面 (GUI) 可以通过现代 Web 浏览器访问，无需在客户端或通过任何 VNC 客户端进行安装或配置
 
 # 开发者
 developer: TAO
@@ -36,13 +36,13 @@ website: https://github.com/alexta69/metube
 submitter: TAO
 
 # 提交 (修正：指向 metube 仓库)
-submission: https://github.com/alexta69/metube
+submission: https://github.com/jlesage/docker-firefox
 
 # 源码仓库 (修正：指向 metube 仓库)
-repo: https://github.com/alexta69/metube
+repo: https://github.com/jlesage/docker-firefox
 
 # 支持页面 (修正：指向 metube 仓库的 issues)
-support: https://github.com/alexta69/metube/issues
+support: https://github.com/jlesage/docker-firefox
 
 # 截图
 gallery:
@@ -64,4 +64,5 @@ path: ""
 defaultUsername: ""
 
 # 默认密码
+
 defaultPassword: ""
