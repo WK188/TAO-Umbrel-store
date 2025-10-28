@@ -5,7 +5,6 @@ tagline: My custom service launcher.
 description: >-
   A simple launcher page with buttons 
   to access all my other docker services.
-category: utilities # 分类我改成了"工具"
 version: "1.0.0"
 port: 8998 # <-- 关键：我为你选了一个新的、未被占用的端口
 developer: TAO # 按照你的模板
