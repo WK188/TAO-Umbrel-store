@@ -1,75 +1,70 @@
-# 清单版本号
+# 清单版本号，用于定义该配置文件的格式版本（目前Umbrel使用1）
 manifestVersion: 1
 
-# 关键：应用唯一 ID
+# 关键：应用唯一 ID，必须在 Umbrel 应用商店中保持唯一
 id: tao-clouddrive2
 
-# 应用显示名称
+# 应用显示名称，将显示在 Umbrel UI 中
 name: Clouddrive2
 
-# 标语
+# 应用的简短标语或副标题
 tagline: 强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案
 
-# 图标
+# 应用图标的 URL
 icon: https://img.heliar.top/file/1761553549463_Clouddrive.png
 
-# 分类
+# 应用所属的类别（例如：Development, Media, Finance）
 category: Development
 
-# 版本号
+# 当前应用的版本号
 version: "1.0.0"
 
-# 关键：端口号 (必须是 metube 内部运行的 8081)
+# 关键：应用内部运行的端口号，Umbrel 将通过此端口访问应用
 port: 19798
 
-# 详细描述
+# 详细的应用描述，支持多行文本
 description: >-
-  CloudDrive是一个全方位的云存储管理平台，旨在无缝集成多个云存储服务，将它们统一整合到一个界面中。
-  使用CloudDrive，您可以轻松管理和访问所有云存储服务，无需在不同的应用程序和界面之间来回切换。
-  CloudDrive最引人注目的特点是其能够将多个云存储服务挂载为本地磁盘，直接访问文件而无需预先下载。想象一下，您可以将云存储服务当作本地文件系统的一部分来使用，带来的便利性不言而喻。
-  但这还不是全部 - CloudDrive还提供了高级功能，如快速的云端文件传输、实时的云文件通知和应用级别的权限控制。无论您是高级用户还是普通云存储用户，CloudDrive都能以卓越的效率和易用性让您充分发挥云存储资源的潜力。
+  CloudDrive是一个全方位的云存储管理平台，旨在无缝集成多个云存储服务，将它们统一整合到一个界面中。
+  使用CloudDrive，您可以轻松管理和访问所有云存储服务，无需在不同的应用程序和界面之间来回切换。
+  CloudDrive最引人注目的特点是其能够将多个云存储服务挂载为本地磁盘，直接访问文件而无需预先下载。想象一下，您可以将云存储服务当作本地文件系统的一部分来使用，带来的便利性不言而喻。
+  但这还不是全部 - CloudDrive还提供了高级功能，如快速的云端文件传输、实时的云文件通知和应用级别的权限控制。无论您是高级用户还是普通云存储用户，CloudDrive都能以卓越的效率和易用性让您充分发挥云存储资源的潜力。
 
-# 开发者
+# 开发者或开发团队的名称
 developer: TAO
 
-# 网站 (修正：指向 metube 仓库)
+# 应用的官方网站或项目主页
 website: https://www.clouddrive2.com/index.html
 
-# 提交者
+# 此应用清单的提交者名称
 submitter: TAO
 
-# 提交 (修正：指向 metube 仓库)
+# 提交此应用到 Umbrel 仓库的拉取请求（PR）链接
 submission: https://www.clouddrive2.com/index.html
 
-# 源码仓库 (修正：指向 metube 仓库)
+# 应用的源代码仓库 URL
 repo: https://www.clouddrive2.com/index.html
 
-# 支持页面 (修正：指向 metube 仓库的 issues)
+# 应用的支持页面或文档链接
 support: https://www.clouddrive2.com/help.html
 
-# 截图
+# 应用截图的 URL 列表，用于在应用商店中展示
 gallery:
-  - https://img.heliar.top/file/1761644127660_截图-clouddrive2.png
-  - https://img.heliar.top/file/1761707500922_截图-clouddrive2-2.png
-  - https://img.heliar.top/file/1761707502344_截图-clouddrive2-1.png
+  - https://img.heliar.top/file/1761644127660_截图-clouddrive2.png
+  - https://img.heliar.top/file/1761707500922_截图-clouddrive2-2.png
+  - https://img.heliar.top/file/1761707502344_截图-clouddrive2-1.png
 
-# 版本说明
+# 版本的发行说明，描述此版本中的更改
 releaseNotes: >-
-  First release on this Umbrel.
+  First release on this Umbrel.
 
-# 依赖
+# 应用运行所需的其他 Umbrel 应用 ID 列表
 dependencies: []
 
-# 路径
+# 应用在 Umbrel 上的自定义访问路径（如果需要）
 path: ""
 
-# 默认用户名
+# 应用的默认用户名（如果适用）
 defaultUsername: ""
 
-# 默认密码
-
+# 应用的默认密码（如果适用）
 defaultPassword: ""
-
-
-
-
