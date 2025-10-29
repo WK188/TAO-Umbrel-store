@@ -50,6 +50,7 @@ support: https://dozzle.dev/guide/what-is-dozzle
 # 截图
 gallery:
   - https://img.heliar.top/file/1761644567722_截图-Dozzle.png
+  - https://img.heliar.top/file/1761707739193_截图-Dozzle2.png
 
 # 版本说明
 releaseNotes: >-
@@ -67,5 +68,6 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
