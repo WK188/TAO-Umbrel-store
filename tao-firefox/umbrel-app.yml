@@ -47,6 +47,7 @@ support: https://github.com/jlesage/docker-firefox
 # 截图
 gallery:
   - https://img.heliar.top/file/1761645382543_截图-Firefox.png
+  - https://img.heliar.top/file/1761708159443_截图-Firefox2.png
 
 # 版本说明
 releaseNotes: >-
@@ -64,5 +65,6 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
