@@ -24,7 +24,7 @@ port: 5800
 
 # 详细的应用描述，支持多行文本
 description: >-
-  该应用程序的图形用户界面 (GUI) 可以通过现代 Web 浏览器访问，无需在客户端或通过任何 VNC 客户端进行安装或配置
+  该应用程序的图形用户界面 (GUI) 可以通过现代 Web 浏览器访问，无需在客户端或通过任何 VNC 客户端进行安装或配置
 
 # 开发者或开发团队的名称
 developer: TAO
@@ -46,12 +46,12 @@ support: https://github.com/jlesage/docker-firefox
 
 # 应用截图的 URL 列表，用于在应用商店中展示
 gallery:
-  - https://img.heliar.top/file/1761645382543_截图-Firefox.png
-  - https://img.heliar.top/file/1761708159443_截图-Firefox2.png
+  - https://img.heliar.top/file/1761645382543_截图-Firefox.png
+  - https://img.heliar.top/file/1761708159443_截图-Firefox2.png
 
 # 版本的发行说明，描述此版本中的更改
 releaseNotes: >-
-  First release on this Umbrel.
+  First release on this Umbrel.
 
 # 应用运行所需的其他 Umbrel 应用 ID 列表
 dependencies: []
