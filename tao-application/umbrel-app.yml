@@ -16,7 +16,7 @@ description: >-
   to access all my other docker services.
 
 # 应用所属的类别（例如：Development, Media, Finance）
-category: utilities
+category: Development
 
 # 当前应用的版本号
 version: "1.0.0"
