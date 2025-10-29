@@ -50,6 +50,8 @@ support: https://www.clouddrive2.com/help.html
 # 截图
 gallery:
   - https://img.heliar.top/file/1761644127660_截图-clouddrive2.png
+  - https://img.heliar.top/file/1761707500922_截图-clouddrive2-2.png
+  - https://img.heliar.top/file/1761707502344_截图-clouddrive2-1.png
 
 # 版本说明
 releaseNotes: >-
@@ -67,6 +69,7 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
 
