@@ -47,11 +47,9 @@ support: https://github.com/getumbrel/umbrel-hello-world-app/issues
 # 应用截图展示列表（通常为3~5张图片）
 gallery:
   # 第一张截图
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://img.heliar.top/file/1761708807994_截图-vert1.png
   # 第二张截图
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  # 第三张截图
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://img.heliar.top/file/1761708809833_截图-vert2.png
 
 # 版本更新说明，写明新功能或修复的内容
 releaseNotes: >-
