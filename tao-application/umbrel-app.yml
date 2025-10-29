@@ -12,8 +12,8 @@ tagline: My custom service launcher.
 
 # 详细的应用描述，支持多行文本
 description: >-
-  A simple launcher page with buttons 
-  to access all my other docker services.
+  A simple launcher page with buttons 
+  to access all my other docker services.
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: utilities
