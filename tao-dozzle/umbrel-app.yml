@@ -24,10 +24,10 @@ port: 8080
 
 # 详细的应用描述，支持多行文本
 description: >-
-  Dozzle 是一个由 Docker OSS 赞助的开源项目。它是一个日志查看器，旨在简化容器的监控和调试。这款轻量级的 Web 应用程序通过直观的用户界面提供实时日志流式传输、过滤和搜索功能。
-  用户可以快速访问 Docker 容器生成的日志，使其成为 Docker 环境中应用程序调试和故障排除的必备工具。默认情况下，Dozzle 支持带有智能颜色编码的 JSON 日志。
-  
-  Dozzle 易于安装和配置，对于寻求高效、用户友好的 Docker 环境日志查看器的开发人员和系统管理员来说，它是理想的解决方案。该工具采用 MIT 许可证，并由其开发者 Amir Raminfar 积极维护。
+  Dozzle 是一个由 Docker OSS 赞助的开源项目。它是一个日志查看器，旨在简化容器的监控和调试。这款轻量级的 Web 应用程序通过直观的用户界面提供实时日志流式传输、过滤和搜索功能。
+  用户可以快速访问 Docker 容器生成的日志，使其成为 Docker 环境中应用程序调试和故障排除的必备工具。默认情况下，Dozzle 支持带有智能颜色编码的 JSON 日志。
+  
+  Dozzle 易于安装和配置，对于寻求高效、用户友好的 Docker 环境日志查看器的开发人员和系统管理员来说，它是理想的解决方案。该工具采用 MIT 许可证，并由其开发者 Amir Raminfar 积极维护。
 
 # 开发者或开发团队的名称
 developer: TAO
@@ -49,12 +49,12 @@ support: https://dozzle.dev/guide/what-is-dozzle
 
 # 应用截图的 URL 列表，用于在应用商店中展示
 gallery:
-  - https://img.heliar.top/file/1761644567722_截图-Dozzle.png
-  - https://img.heliar.top/file/1761707739193_截图-Dozzle2.png
+  - https://img.heliar.top/file/1761644567722_截图-Dozzle.png
+  - https://img.heliar.top/file/1761707739193_截图-Dozzle2.png
 
 # 版本的发行说明，描述此版本中的更改
 releaseNotes: >-
-  First release on this Umbrel.
+  First release on this Umbrel.
 
 # 应用运行所需的其他 Umbrel 应用 ID 列表
 dependencies: []
