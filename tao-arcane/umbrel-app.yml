@@ -24,7 +24,7 @@ port: 3552
 
 # 详细的应用描述，支持多行文本
 description: >-
-  Arcane 旨在打造一个简单易用的现代化Docker管理平台，以人为本。Arcane 的目标是由社区构建，服务社区，确保每个人都不会因其特定功能或流程而感到被冷落或落后。
+  Arcane 旨在打造一个简单易用的现代化Docker管理平台，以人为本。Arcane 的目标是由社区构建，服务社区，确保每个人都不会因其特定功能或流程而感到被冷落或落后。
 
 # 开发者或开发团队的名称
 developer: TAO
@@ -46,12 +46,12 @@ support: https://arcane.ofkm.dev/docs
 
 # 应用截图的 URL 列表，用于在应用商店中展示
 gallery:
-  - https://img.heliar.top/file/1761643246687_截图-arcane1.png
-  - https://img.heliar.top/file/1761707247348_截图-arcane2.png
+  - https://img.heliar.top/file/1761643246687_截图-arcane1.png
+  - https://img.heliar.top/file/1761707247348_截图-arcane2.png
 
 # 版本的发行说明，描述此版本中的更改
 releaseNotes: >-
-  First release on this Umbrel.
+  First release on this Umbrel.
 
 # 应用运行所需的其他 Umbrel 应用 ID 列表
 dependencies: []
