@@ -24,7 +24,7 @@ port: 45876
 
 # 详细的应用描述，支持多行文本
 description: >-
-  包含 Docker 统计信息、历史数据和警报功能
+  包含 Docker 统计信息、历史数据和警报功能
 
 # 开发者或开发团队的名称
 developer: TAO
@@ -46,11 +46,11 @@ support: https://beszel.dev/zh/guide/what-is-beszel
 
 # 应用截图的 URL 列表，用于在应用商店中展示
 gallery:
-  - https://img.heliar.top/file/1761642764736_截图-beszel2.png
+  - https://img.heliar.top/file/1761642764736_截图-beszel2.png
 
 # 版本的发行说明，描述此版本中的更改
 releaseNotes: >-
-  First release on this Umbrel.
+  First release on this Umbrel.
 
 # 应用运行所需的其他 Umbrel 应用 ID 列表
 dependencies: []
