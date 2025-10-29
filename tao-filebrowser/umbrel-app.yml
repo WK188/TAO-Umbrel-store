@@ -46,7 +46,9 @@ support: https://filebrowser.org/installation.html
 
 # 截图
 gallery:
-  - https://img.heliar.top/file/1761645010888_截图-filebrowser.png
+  - https://img.heliar.top/file/1761697392509_1.jpg
+  - https://img.heliar.top/file/1761697398507_2.jpg
+  - https://img.heliar.top/file/1761697391391_3.jpg
 
 # 版本说明
 releaseNotes: >-
@@ -64,5 +66,6 @@ defaultUsername: ""
 # 默认密码
 
 defaultPassword: ""
+
 
 
