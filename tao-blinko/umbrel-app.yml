@@ -51,7 +51,11 @@ website: https://blinko.app
 repo: https://github.com/blinko-app/blinko
 support: https://github.com/blinko-app/blinko/issues
 icon: https://img.heliar.top/file/1761806871127_blinko.png
-gallery: []
+# 关键: 已添加你的三张介绍图
+gallery:
+  - https://img.heliar.top/file/1761807056794_01fd13b3-a32b-448f-80f6-f12ec1e1fb06.jpeg
+  - https://img.heliar.top/file/1761807053079_180fbcb2-edab-4b6e-83a8-071dcc337fe5.jpeg
+  - https://img.heliar.top/file/1761807055872_3297b52f-ba30-4d83-b04d-e001094109b9.jpeg
 releaseNotes: "First version for TAO App Store."
 dependencies: []
 path: ""
