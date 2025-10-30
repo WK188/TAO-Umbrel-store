@@ -11,7 +11,7 @@ name: Firefox
 tagline: Mozilla 公司开发的免费开源网络浏览器
 
 # 应用图标的 URL
-icon: https://img.heliar.top/file/1761354857492_Firefox.png
+icon: https://img.heliar.top/file/1761783808522_Firefox.png
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: Development
@@ -64,3 +64,4 @@ defaultUsername: ""
 
 # 应用的默认密码（如果适用）
 defaultPassword: ""
+
