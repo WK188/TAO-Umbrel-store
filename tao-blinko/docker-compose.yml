@@ -16,7 +16,7 @@ services:
     # ⬇️ 关键修正 (镜像名称 v2) ⬇️
     # ------------------
     # 使用你截图中的正确官方镜像名称
-    image: 'blinkospace/blinko:latest' # <-- 已修正
+    image: 'blinkospace/blinko:1.6.3' # <-- 已修正
     
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-blinko_main_1
