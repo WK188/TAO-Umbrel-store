@@ -5,48 +5,33 @@ services:
   # 1. Umbrel 反向代理
   app_proxy:
     environment:
-      # 关键: 主机链 (匹配你的 id: tao-blinko)
       APP_HOST: tao-blinko_main_1
-      # 关键: 端口链 (匹配 Blinko 内部端口)
       APP_PORT: 1111
 
-  # 2. Blinko 应用服务 (原 'blinko-website')
+  # 2. Blinko 应用服务
   main:
-    # ------------------
-    # ⬇️ 关键修正 (镜像名称 v2) ⬇️
-    # ------------------
-    # 使用你截图中的正确官方镜像名称
-    image: 'blinkospace/blinko:1.6.3' # <-- 已修正
-    
-    # 关键: 主机链 (匹配 APP_HOST)
+    image: 'blinkospace/blinko:1.6.3'
     container_name: tao-blinko_main_1
     
-    # 关键: 权限链 (Case 1)
+    # Blinko 需要 user: 1000 (Case 1)
     user: '1000:1000'
     
     restart: always
-    
     depends_on:
       postgres:
         condition: service_healthy
-        
     environment:
       - NODE_ENV=production
       - NEXTAUTH_SECRET=my_ultra_secure_nextauth_secret
       - DATABASE_URL=postgresql://postgres:mysecretpassword@postgres:5432/postgres
-      
     expose:
       - "1111"
-      
     volumes:
       - ${APP_DATA_DIR}/data:/app/.blinko
-      
     logging:
       options:
         max-size: "10m"
         max-file: "3"
-        
-    # 关键修正: 将 healthcheck 指向正确的服务名 'main'
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://main:1111/"]
       interval: 30s
@@ -58,7 +43,14 @@ services:
   postgres:
     image: 'postgres:14'
     container_name: tao-blinko_postgres_1
-    user: '1000:1000'
+    
+    # ------------------
+    # ⬇️ 关键修正 (权限) ⬇️
+    # ------------------
+    # 移除 user: '1000:1000'，让 Postgres 以默认用户 (root) 启动
+    # 它会自己管理内部权限 (Case 2)
+    # user: '1000:1000' # <-- 移除这一行
+    
     restart: always
     environment:
       - POSTGRES_DB=postgres
@@ -72,4 +64,3 @@ services:
       interval: 5s
       timeout: 10s
       retries: 5
-
