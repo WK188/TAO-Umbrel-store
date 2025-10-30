@@ -1,0 +1,43 @@
+# 清单版本号
+manifestVersion: 1
+
+# 关键: 你的商店 ID
+id: tao-panhub
+
+# 应用显示名称
+name: Panhub
+
+# 标语
+tagline: 一个聚合的网盘搜索工具
+
+# 描述
+description: >-
+  它可以聚合多个优质资源站和公开频道,一次搜索即可覆盖阿里云盘、夸克、百度网盘、115、迅雷等热门网盘资源。
+它提供智能排序、分类型展示、极速部署等功能,并且是免费开源、零广告、轻量部署的。
+  
+# 应用分类
+category: tools
+
+# 版本号
+version: "1.0.0"
+
+# 关键: 端口链 (内部和外部端口均为 3000)
+port: 3000
+
+# 关键: 你的开发者名称
+developer: TAO
+
+# 关键: 你的提交者名称
+submitter: TAO
+
+# --- 填充信息 ---
+website: https://github.com/wu529778790/panhub.shenzjd.com
+repo: https://github.com/wu529778790/panhub.shenzjd.com
+support: https://github.com/wu529778790/panhub.shenzjd.com
+icon: https://img.heliar.top/file/1761805893770_panhub.png # (需要找一个图标URL)
+gallery: []
+releaseNotes: "First version for TAO App Store."
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

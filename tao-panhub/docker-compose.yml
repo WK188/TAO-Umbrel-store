@@ -1,0 +1,27 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-panhub)
+      APP_HOST: tao-panhub_main_1
+      # 关键: 端口链 (匹配 Panhub 内部端口)
+      APP_PORT: 3000
+
+  # 2. Panhub 应用服务
+  main:
+    image: 'docker.io/wu529778790/panhub.shenzjd.com:latest'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-panhub_main_1
+    
+    restart: unless-stopped
+
+    # 关键: 路径链 (无)
+    # 官方配置没有 volumes，我们省略 volumes 字段
+    
+    # 关键: 权限链 (Case 2)
+    # 省略 'user:' 字段，让容器以默认 root 身份运行
+    
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "3000"
