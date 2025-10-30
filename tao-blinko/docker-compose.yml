@@ -1,0 +1,88 @@
+# 移除 'version:' 字段
+# 移除顶层 'networks:' 字段
+
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-blinko)
+      APP_HOST: tao-blinko_main_1
+      # 关键: 端口链 (匹配 Blinko 内部端口)
+      APP_PORT: 1111
+
+  # 2. Blinko 应用服务 (原 'blinko-website')
+  main:
+    image: 'blinkospace/blinko:latest'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-blinko_main_1
+    
+    # 关键: 权限链 (Case 1)
+    # 必须指定 1000:1000，以便 Umbrel 帮我们设置数据卷权限
+    user: '1000:1000'
+    
+    restart: always
+    
+    depends_on:
+      postgres:
+        condition: service_healthy
+        
+    # 保留官方的环境变量
+    environment:
+      - NODE_ENV=production
+      - NEXTAUTH_SECRET=my_ultra_secure_nextauth_secret
+      - DATABASE_URL=postgresql://postgres:mysecretpassword@postgres:5432/postgres
+      
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "1111"
+      
+    # 关键: 路径链 (添加持久化)
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/.blinko
+      
+    # 保留 logging 和 healthcheck
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://blinko-website:1111/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+      
+    # 移除 'networks:'
+
+  # 3. Postgres 数据库服务
+  postgres:
+    image: 'postgres:14'
+    # 给予一个唯一的容器名
+    container_name: tao-blinko_postgres_1
+    
+    # 关键: 权限链 (Case 1)
+    # 同样指定 1000:1000，让 Umbrel 设置权限
+    user: '1000:1000'
+    
+    restart: always
+    
+    # 保留官方的环境变量
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - TZ=Asia/Shanghai
+      
+    # 关键: 路径链 (添加持久化)
+    volumes:
+      - ${APP_DATA_DIR}/postgres-data:/var/lib/postgresql/data
+      
+    # 保留 healthcheck
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+      
+    # 移除 'ports:' 和 'networks:'

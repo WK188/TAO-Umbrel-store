@@ -1,0 +1,60 @@
+manifestVersion: 1
+
+# 关键: 你的商店 ID
+id: tao-blinko
+
+# 应用显示名称
+name: Blinko
+
+# 标语 (已根据新描述更新)
+tagline: 一个由人工智能驱动的创意和笔记中心
+
+# 描述 (已更新为你提供的版本)
+description: >-
+  😉 Blinko 是一款 开源应用程序，集 笔记记录、微博客、剪贴板分享（Pastebin）、任务管理 以及 AI 智能功能 于一体，运行于 自托管（self-hosted）环境 中。
+
+  该平台让用户能够快速高效地捕捉想法，并支持 完整的 Markdown 格式，方便内容排版与展示。
+  通过集成 OpenAI 或 Ollama 等 AI 模型，Blinko 可以实现 智能搜索与内容整理。
+
+  如果你想连接 Umbrel 上的 Ollama 实例，请在设置中输入以下 URL：
+
+  👉 http://ollama_ollama_1:11434
+  
+  Blinko 提供灵活的笔记管理方式，笔记既可以保持私密，也可选择公开分享。
+
+  系统支持 定期自动备份，并提供 数据导入与导出 功能，确保用户始终完全掌控自己的内容。
+
+  由于 Blinko 采用自托管架构，用户可以在 安全无商业限制的环境中 享受 数据主权。
+  Blinko 基于 Next.js 构建，经过性能优化，拥有 高速、响应迅速且现代化的用户体验。
+
+  作为一个 开源项目，它鼓励社区协作，永久免费、无任何隐藏费用。
+
+  Blinko 适合任何希望获得 强大且可自定义的数字化组织解决方案 的用户。
+
+# 应用分类
+category: productivity
+
+# 版本号
+version: "1.0.0"
+
+# 关键: 端口链 (内部和外部端口均为 1111)
+port: 1111
+
+# 关键: 你的开发者名称
+developer: TAO
+
+# 关键: 你的提交者名称
+submitter: TAO
+
+# --- 填充信息 ---
+website: https://blinko.app
+repo: https://github.com/blinko-app/blinko
+support: https://github.com/blinko-app/blinko/issues
+icon: https://img.heliar.top/file/1761806871127_blinko.png
+gallery: []
+releaseNotes: "First version for TAO App Store."
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+
