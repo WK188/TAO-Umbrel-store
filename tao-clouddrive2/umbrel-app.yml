@@ -11,7 +11,7 @@ name: Clouddrive2
 tagline: 强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案
 
 # 应用图标的 URL
-icon: https://img.heliar.top/file/1761553549463_Clouddrive.png
+icon: https://img.heliar.top/file/1761783797294_Clouddrive.png
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: Development
@@ -68,3 +68,4 @@ defaultUsername: ""
 
 # 应用的默认密码（如果适用）
 defaultPassword: ""
+
