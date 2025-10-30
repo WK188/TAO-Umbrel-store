@@ -12,7 +12,11 @@ services:
 
   # 2. Blinko 应用服务 (原 'blinko-website')
   main:
-    image: 'blinkospace/blinko:latest'
+    # ------------------
+    # ⬇️ 关键修正 (镜像名称 v2) ⬇️
+    # ------------------
+    # 使用你截图中的正确官方镜像名称
+    image: 'blinkospace/blinko:latest' # <-- 已修正
     
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-blinko_main_1
@@ -44,7 +48,7 @@ services:
         
     # 关键修正: 将 healthcheck 指向正确的服务名 'main'
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://main:1111/"] # <-- 已修正
+      test: ["CMD", "wget", "--spider", "-q", "http://main:1111/"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -68,3 +72,4 @@ services:
       interval: 5s
       timeout: 10s
       retries: 5
+
