@@ -11,7 +11,7 @@ name: FileBrowser
 tagline: 文件管理界面，用于上传、删除、预览和编辑文件
 
 # 应用图标的 URL
-icon: https://img.heliar.top/file/1761533310940_Filebrowser.png
+icon: https://img.heliar.top/file/1761783800671_Filebrowser.png
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: Development
@@ -65,3 +65,4 @@ defaultUsername: ""
 
 # 应用的默认密码（如果适用）
 defaultPassword: ""
+
