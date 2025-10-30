@@ -11,7 +11,7 @@ name: Dozzle
 tagline: 简单的容器监控和日志记录
 
 # 应用图标的 URL
-icon: https://img.heliar.top/file/1761532912214_Dozzle.png
+icon: https://img.heliar.top/file/1761783801536_Dozzle.png
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: Development
@@ -67,3 +67,4 @@ defaultUsername: ""
 
 # 应用的默认密码（如果适用）
 defaultPassword: ""
+
