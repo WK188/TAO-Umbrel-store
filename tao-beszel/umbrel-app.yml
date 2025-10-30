@@ -11,7 +11,7 @@ name: Beszel
 tagline: 轻量易用的服务器监控
 
 # 应用图标的 URL
-icon: https://img.heliar.top/file/1761528717148_Beszel.png
+icon: https://img.heliar.top/file/1761783623985_Beszel.png
 
 # 应用所属的类别（例如：Development, Media, Finance）
 category: Development
@@ -74,3 +74,4 @@ defaultUsername: ""
 
 # 应用的默认密码（如果适用）
 defaultPassword: ""
+
