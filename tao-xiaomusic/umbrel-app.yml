@@ -1,13 +1,14 @@
 manifestVersion: 1
-# 关键: ID 更改为 'tao-xiaomusic' 以匹配 docker-compose.yml
 id: "tao-xiaomusic"
 name: "XiaoMusic"
 tagline: "小爱音箱音乐服务器"
 icon: "https://img.heliar.top/file/1761901889325_XiaoMusic.png"
-category: "Development" # 分类
+category: "Media"
 version: "1.0.0"
-# 关键: 端口必须是容器的内部端口
-port: 8090
+# 关键: 
+# 这将是 Umbrel 分配的 *主机* 端口。
+# 我们将其设置为 58090，以避免与 bezel 的 8090 冲突。
+port: 58090
 description: |
   一个可以部署在 NAS 上的小爱音箱音乐服务器。
   
@@ -15,13 +16,11 @@ description: |
   - 配置文件目录将位于: `${APP_DATA_DIR}/conf`
   - 音乐文件目录将位于: `${APP_DATA_DIR}/music`
   
-  您需要将音乐文件放入 music 目录中。
-  
-  应用启动后，您可以通过 Umbrel 仪表板直接访问，无需关心端口号。
+  应用启动后，您可以通过 Umbrel 仪表板访问。
+  后台访问地址为： http://<您的IP>:58090
 
 developer: "hanxi"
 website: "https://github.com/hanxi/xiaomusic"
-# 关键: submitter 设为 'tao'
 submitter: "tao"
 repo: "https://github.com/hanxi/xiaomusic"
 support: "https://github.com/hanxi/xiaomusic/issues"
