@@ -3,7 +3,7 @@ id: "tao-xiaomusic"
 name: "XiaoMusic"
 tagline: "小爱音箱音乐服务器"
 icon: "https://img.heliar.top/file/1761901889325_XiaoMusic.png"
-category: "Media"
+category: "Development"
 version: "1.0.0"
 # 关键: 
 # 这将是 Umbrel 分配的 *主机* 端口。
