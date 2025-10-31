@@ -1,0 +1,30 @@
+services:
+  # 1. Umbrel 应用代理
+  app_proxy:
+    environment:
+      # 关键: APP_HOST 必须匹配下面 'main' 服务的 container_name
+      # 我们将使用 'tao-xiaomusic' 作为 ID
+      APP_HOST: tao-xiaomusic_main_1
+      
+      # 关键: APP_PORT 必须是 'main' 服务（xiaomusic）的内部端口
+      # xiaomusic 容器的端口是 8090
+      APP_PORT: 8090
+
+  # 2. XiaoMusic 应用服务
+  main:
+    image: 'docker.hanxi.cc/hanxi/xiaomusic'
+    
+    # 关键: container_name 必须匹配上面的 APP_HOST
+    container_name: tao-xiaomusic_main_1
+    
+    restart: unless-stopped
+    
+    # 关键: 添加 volumes。这对于 xiaomusic 至关重要
+    # 我们使用 Umbrel 的标准 ${APP_DATA_DIR} 变量来存储数据
+    volumes:
+      - "${APP_DATA_DIR}/conf:/app/conf"
+      - "${APP_DATA_DIR}/music:/app/music"
+
+    # 关键: 使用 'expose' 暴露内部端口，而不是 'ports'
+    expose:
+      - "8090"
