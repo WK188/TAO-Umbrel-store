@@ -1,0 +1,35 @@
+manifestVersion: 1
+id: "tao-owntone" # 关键: 使用您的专属 ID 格式
+name: "Owntone"
+tagline: "您的个人 DAAP/MPD 音乐服务器"
+icon: "https://img.heliar.top/file/1761927376929_OwnTone.png"
+category: "Development" # 遵从 "Vert" 格式
+version: "1.0.0"
+port: 3688
+
+description: >-
+  Owntone (前身为 forked-daapd) 是一个 DAAP (iTunes)、MPD 和 RSP (Roku) 音乐服务器。
+  
+  它允许您通过网页界面、Apple Remote 应用或 MPD 客户端来播放您的音乐库。
+  
+  **重要提示：** 请将您的音乐文件复制到 Umbrel 上的 `app-data/tao-owntone/music` 文件夹中，然后在 Owntone 的网页界面设置中进行扫描。
+
+# 关键: 遵从 "Vert" 格式
+developer: "TAO"
+website: "https://owntone.github.io/owntone-server/"
+submitter: "TAO" 
+submission: "https://github.com/gshang2017/TAO-Umbrel-store" # 假设这是您的商店仓库
+repo: "https://hub.docker.com/r/owntone/owntone"
+support: "https://github.com/owntone/owntone-server/issues"
+
+gallery:
+  - "https://i.imgur.com/y6KnPLU.png"
+  - "https://raw.githubusercontent.com/owntone/owntone-server/master/docs/images/remote.png"
+
+releaseNotes: "v1.0.0 - 初始版本"
+dependencies: []
+
+# 关键: 遵从 "Vert" 格式
+path: ""
+defaultUsername: ""
+defaultPassword: ""

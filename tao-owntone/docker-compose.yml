@@ -1,0 +1,39 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    image: getumbrel/app-proxy:v1.1.0
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    restart: on-failure
+    environment:
+      # 关键: 匹配 umbrel-app.yml 里的 id (tao-owntone)
+      APP_HOST: tao-owntone_main_1
+      # 关键: 匹配 main 服务的内部 Web 端口 (3688)
+      APP_PORT: 3688
+
+  # 2. Owntone 应用服务 (这是 "代码", 不是 "格式")
+  main:
+    image: 'owntone/owntone:latest'
+    # 关键: 匹配 APP_HOST (这是 "格式")
+    container_name: tao-owntone_main_1
+    restart: unless-stopped
+    
+    # 关键: 声明内部 Web 端口 (用于 app_proxy)
+    expose:
+      - "3688"
+      
+    # 关键: 暴露 Owntone 功能所需的其他端口
+    ports:
+      - "3689:3689" # DAAP (Apple Remote)
+      - "6600:6600" # MPD
+
+    # 关键: Owntone 功能所需的存储卷
+    volumes:
+      - ${APP_DATA_DIR}/config:/config
+      - ${APP_DATA_DIR}/music:/music
+    
+    # 环境变量
+    environment:
+      - TZ=Asia/Taipei
