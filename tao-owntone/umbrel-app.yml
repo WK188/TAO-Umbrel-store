@@ -14,7 +14,7 @@ tagline: 您的个人音乐和媒体服务器
 icon: https://img.heliar.top/file/1761927376929_OwnTone.png
 
 # 应用所属的类别
-category: Media
+category: Development
 
 # 当前应用的版本号
 version: "1.0.0"
