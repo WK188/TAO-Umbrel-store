@@ -1,42 +1,43 @@
 services:
-  # Umbrel 反向代理
+  # 1. Umbrel 反向代理
   app_proxy:
     environment:
       APP_HOST: tao-owntone_main_1
       APP_PORT: 3689
 
-  # OwnTone 主服务
+  # 2. OwnTone 主服务
   main:
     image: 'owntone/owntone:staging'
     container_name: tao-owntone_main_1
     restart: unless-stopped
 
     # -------------------------------
-    # 关键：特权模式 + PID + tmpfs + cgroup
+    # 关键：特权模式 + PID + tmpfs
     privileged: true
     pid: "host"
     tmpfs:
       - /run
       - /tmp
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     # -------------------------------
+
+    # 关键修正：所有 'volumes' 必须合并在一个键下
+    volumes:
+      # 系统挂载
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      
+      # 应用数据卷
+      - /data/app-data/tao-owntone/config:/etc/owntone
+      - /data/app-data/tao-owntone/database:/var/cache/owntone
+      - /data/storage/music:/srv/media:ro
 
     # 用户 UID/GID
     environment:
       UID: 1000
       GID: 1000
 
-    # 应用卷
-    volumes:
-      - /data/app-data/tao-owntone/config:/etc/owntone
-      - /data/app-data/tao-owntone/database:/var/cache/owntone
-      - /data/storage/music:/srv/media:ro
-
     expose:
       - "3689"
 
-    # 启动时自动修复权限
-    command: >
-      sh -c "chown -R 1000:1000 /var/cache/owntone /etc/owntone &&
-             exec owntone -f"
+    # 关键修正：必须移除 'command'，以允许容器运行其
+    # 默认的 OpenRC init 系统。
+    # privileged: true 会修复 init 系统的问题。
