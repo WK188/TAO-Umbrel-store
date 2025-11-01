@@ -1,10 +1,17 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      APP_HOST: tao-owntone_main_1
+      APP_PORT: 3689
+
+  # 2. OwnTone 主服务
   main:
     image: 'owntone/owntone:staging'
-    
     container_name: tao-owntone_main_1
-    
     restart: unless-stopped
 
+    # 卷挂载
     volumes:
       - /data/app-data/tao-owntone/config:/etc/owntone
       - /data/app-data/tao-owntone/database:/var/cache/owntone
@@ -17,7 +24,7 @@
     expose:
       - "3689"
 
-    # ✅ 自动修复卷权限并启动 OwnTone
+    # 自动修复权限并启动 OwnTone
     command: >
       sh -c "chown -R 1000:1000 /var/cache/owntone /etc/owntone &&
              exec owntone -f"
