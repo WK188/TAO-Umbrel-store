@@ -16,24 +16,20 @@ services:
     
     restart: unless-stopped
 
-    # 关键: 路径链 (来自 podman 命令)
+    # 关键: 路径链 (已修正为 Umbrel 绝对路径)
     volumes:
-      # <configuration-location>:/etc/owntone
-      - data/config:/etc/owntone
+      # 修正: 映射到 Umbrel 的 app-data 目录
+      - /data/app-data/tao-owntone/config:/etc/owntone
+      - /data/app-data/tao-owntone/database:/var/cache/owntone
       
-      # <database-location>:/var/cache/owntone
-      - data/database:/var/cache/owntone
-      
-      # <media-location>:/srv/media
-      # 注意：这默认映射到您 Umbrel 的 /data/storage/music 目录
-      # 您可以按需修改
+      # 媒体路径 (这个是正确的)
       - /data/storage/music:/srv/media:ro
       
-    # 关键: 权限链 (来自 podman 命令)
+    # 关键: 权限链
     environment:
       UID: 1000
       GID: 1000
     
-    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    # 关键: 端口链
     expose:
       - "3689"
