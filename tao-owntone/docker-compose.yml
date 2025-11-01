@@ -12,15 +12,20 @@ services:
     restart: unless-stopped
 
     # -------------------------------
-    # 关键：特权模式 + PID + tmpfs
+    # 关键修正：保留 'privileged' (用于 cgroup 和 mount 权限)
     privileged: true
-    pid: "host"
+    
+    # 关键修正：移除 'pid: "host"'
+    # 'pid: "host"' 会导致容器共享主机的 PID 空间，
+    # 使得容器的 init 进程无法成为 PID 1，从而启动失败。
+    # -------------------------------
+
+    # tmpfs 挂载 (init 系统需要)
     tmpfs:
       - /run
       - /tmp
-    # -------------------------------
 
-    # 关键修正：所有 'volumes' 必须合并在一个键下
+    # 卷（已合并）
     volumes:
       # 系统挂载
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -37,7 +42,3 @@ services:
 
     expose:
       - "3689"
-
-    # 关键修正：必须移除 'command'，以允许容器运行其
-    # 默认的 OpenRC init 系统。
-    # privileged: true 会修复 init 系统的问题。
