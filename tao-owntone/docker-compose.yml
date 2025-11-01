@@ -1,23 +1,42 @@
-main:
-  image: 'owntone/owntone:staging'
-  container_name: tao-owntone_main_1
-  restart: unless-stopped
+services:
+  # Umbrel 反向代理
+  app_proxy:
+    environment:
+      APP_HOST: tao-owntone_main_1
+      APP_PORT: 3689
 
-  privileged: true
-  pid: "host"
-  tmpfs:
-    - /run
-    - /tmp
+  # OwnTone 主服务
+  main:
+    image: 'owntone/owntone:staging'
+    container_name: tao-owntone_main_1
+    restart: unless-stopped
 
-  volumes:
-    - /data/app-data/tao-owntone/config:/etc/owntone
-    - /data/app-data/tao-owntone/database:/var/cache/owntone
-    - /data/storage/music:/srv/media:ro
-    - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # -------------------------------
+    # 关键：特权模式 + PID + tmpfs + cgroup
+    privileged: true
+    pid: "host"
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # -------------------------------
 
-  environment:
-    UID: 1000
-    GID: 1000
+    # 用户 UID/GID
+    environment:
+      UID: 1000
+      GID: 1000
 
-  expose:
-    - "3689"
+    # 应用卷
+    volumes:
+      - /data/app-data/tao-owntone/config:/etc/owntone
+      - /data/app-data/tao-owntone/database:/var/cache/owntone
+      - /data/storage/music:/srv/media:ro
+
+    expose:
+      - "3689"
+
+    # 启动时自动修复权限
+    command: >
+      sh -c "chown -R 1000:1000 /var/cache/owntone /etc/owntone &&
+             exec owntone -f"
