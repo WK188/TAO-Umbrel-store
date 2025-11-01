@@ -1,39 +1,23 @@
-services:
-  # 1. Umbrel 反向代理
-  app_proxy:
-    environment:
-      # 关键: 主机链 (匹配你的 id: tao-owntone)
-      APP_HOST: tao-owntone_main_1
-      # 关键: 端口链 (OwnTone 默认 Web 端口)
-      APP_PORT: 3689
-
-  # 2. OwnTone 应用服务
   main:
     image: 'owntone/owntone:staging'
     
-    # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-owntone_main_1
-    
-    # ------------------------------------------------
-    # 关键修正：添加特权模式以解决 'permission denied'
-    privileged: true
-    # ------------------------------------------------
     
     restart: unless-stopped
 
-    # 关键: 路径链 (已修正为 Umbrel 绝对路径)
     volumes:
       - /data/app-data/tao-owntone/config:/etc/owntone
       - /data/app-data/tao-owntone/database:/var/cache/owntone
-      
-      # 媒体路径
       - /data/storage/music:/srv/media:ro
-      
-    # 关键: 权限链
+
     environment:
       UID: 1000
       GID: 1000
-    
-    # 关键: 端口链
+
     expose:
       - "3689"
+
+    # ✅ 自动修复卷权限并启动 OwnTone
+    command: >
+      sh -c "chown -R 1000:1000 /var/cache/owntone /etc/owntone &&
+             exec owntone -f"
