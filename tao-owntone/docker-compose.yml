@@ -1,0 +1,39 @@
+services:
+  # 1. Umbrel 反向代理
+  app_proxy:
+    environment:
+      # 关键: 主机链 (匹配你的 id: tao-owntone)
+      APP_HOST: tao-owntone_main_1
+      # 关键: 端口链 (OwnTone 默认 Web 端口)
+      APP_PORT: 3689
+
+  # 2. OwnTone 应用服务
+  main:
+    image: 'owntone/owntone:staging'
+    
+    # 关键: 主机链 (匹配 APP_HOST)
+    container_name: tao-owntone_main_1
+    
+    restart: unless-stopped
+
+    # 关键: 路径链 (来自 podman 命令)
+    volumes:
+      # <configuration-location>:/etc/owntone
+      - data/config:/etc/owntone
+      
+      # <database-location>:/var/cache/owntone
+      - data/database:/var/cache/owntone
+      
+      # <media-location>:/srv/media
+      # 注意：这默认映射到您 Umbrel 的 /data/storage/music 目录
+      # 您可以按需修改
+      - /data/storage/music:/srv/media:ro
+      
+    # 关键: 权限链 (来自 podman 命令)
+    environment:
+      UID: 1000
+      GID: 1000
+    
+    # 关键: 端口链 (移除 'ports'，替换为 'expose')
+    expose:
+      - "3689"
