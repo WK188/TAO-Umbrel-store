@@ -14,7 +14,7 @@ services:
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-dozzle_main_1
     
-    restart: unless-stopped
+    restart: always
 
     # 关键: 路径链 (必须保留 docker.sock)
     volumes:
@@ -28,3 +28,4 @@ services:
       - "8080"
       
     # 修正: 移除空的 'environment:' 字段
+
