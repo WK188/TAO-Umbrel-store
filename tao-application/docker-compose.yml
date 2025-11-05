@@ -10,7 +10,7 @@ services:
     image: 'nginx:alpine'
     # 关键：容器名要和 APP_HOST 对应
     container_name: tao-application_main_1
-    restart: unless-stopped
+    restart: always
     volumes:
       # 关键：这完全遵照你的模板
       # 它会从 Umbrel 的数据区加载 html
