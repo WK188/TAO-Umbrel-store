@@ -14,7 +14,7 @@ services:
     # 关键: 主机链 (匹配 APP_HOST)
     container_name: tao-beszel_main_1
     
-    restart: unless-stopped
+    restart: always
 
     # 关键: 路径链 (使用 Umbrel 标准路径)
     volumes:
@@ -25,4 +25,5 @@ services:
     
     # 关键: 端口链 (移除 'ports'，替换为 'expose')
     expose:
+
       - "8090"
